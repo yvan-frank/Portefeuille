@@ -36,6 +36,7 @@
             this.gunaShadowPanel3 = new Guna.UI.WinForms.GunaShadowPanel();
             this.label13 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.gunaShadowPanel2 = new Guna.UI.WinForms.GunaShadowPanel();
             this.gunaSeparator8 = new Guna.UI.WinForms.GunaSeparator();
@@ -54,6 +55,7 @@
             this.gunaComboBox3 = new Guna.UI.WinForms.GunaComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.gunaShadowPanel1 = new Guna.UI.WinForms.GunaShadowPanel();
+            this.cmbTypeProject = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btnCreate = new Guna.UI2.WinForms.Guna2Button();
             this.btnafficher = new Guna.UI2.WinForms.Guna2Button();
             this.gunaSeparator4 = new Guna.UI.WinForms.GunaSeparator();
@@ -97,8 +99,6 @@
             this.gunaSeparator9 = new Guna.UI.WinForms.GunaSeparator();
             this.gunaComboBox7 = new Guna.UI.WinForms.GunaComboBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.cmbTypeProject = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -187,6 +187,14 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // cartesianChart1
+            // 
+            this.cartesianChart1.Location = new System.Drawing.Point(406, 3);
+            this.cartesianChart1.Name = "cartesianChart1";
+            this.cartesianChart1.Size = new System.Drawing.Size(462, 210);
+            this.cartesianChart1.TabIndex = 2;
+            this.cartesianChart1.Text = "cartesianChart1";
             // 
             // tabPage2
             // 
@@ -461,6 +469,25 @@
             this.gunaShadowPanel1.ShadowColor = System.Drawing.Color.Black;
             this.gunaShadowPanel1.Size = new System.Drawing.Size(437, 394);
             this.gunaShadowPanel1.TabIndex = 4;
+            // 
+            // cmbTypeProject
+            // 
+            this.cmbTypeProject.BackColor = System.Drawing.Color.Transparent;
+            this.cmbTypeProject.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbTypeProject.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTypeProject.FocusedColor = System.Drawing.Color.Empty;
+            this.cmbTypeProject.FocusedState.Parent = this.cmbTypeProject;
+            this.cmbTypeProject.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmbTypeProject.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmbTypeProject.FormattingEnabled = true;
+            this.cmbTypeProject.HoverState.Parent = this.cmbTypeProject;
+            this.cmbTypeProject.ItemHeight = 30;
+            this.cmbTypeProject.ItemsAppearance.Parent = this.cmbTypeProject;
+            this.cmbTypeProject.Location = new System.Drawing.Point(30, 196);
+            this.cmbTypeProject.Name = "cmbTypeProject";
+            this.cmbTypeProject.ShadowDecoration.Parent = this.cmbTypeProject;
+            this.cmbTypeProject.Size = new System.Drawing.Size(174, 36);
+            this.cmbTypeProject.TabIndex = 37;
             // 
             // btnCreate
             // 
@@ -1015,33 +1042,6 @@
             this.imageList1.Images.SetKeyName(0, "icons8_send_hot_list_48.png");
             this.imageList1.Images.SetKeyName(1, "icons8_settings_3_filled.ico");
             // 
-            // cmbTypeProject
-            // 
-            this.cmbTypeProject.BackColor = System.Drawing.Color.Transparent;
-            this.cmbTypeProject.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbTypeProject.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbTypeProject.FocusedColor = System.Drawing.Color.Empty;
-            this.cmbTypeProject.FocusedState.Parent = this.cmbTypeProject;
-            this.cmbTypeProject.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cmbTypeProject.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cmbTypeProject.FormattingEnabled = true;
-            this.cmbTypeProject.HoverState.Parent = this.cmbTypeProject;
-            this.cmbTypeProject.ItemHeight = 30;
-            this.cmbTypeProject.ItemsAppearance.Parent = this.cmbTypeProject;
-            this.cmbTypeProject.Location = new System.Drawing.Point(30, 196);
-            this.cmbTypeProject.Name = "cmbTypeProject";
-            this.cmbTypeProject.ShadowDecoration.Parent = this.cmbTypeProject;
-            this.cmbTypeProject.Size = new System.Drawing.Size(174, 36);
-            this.cmbTypeProject.TabIndex = 37;
-            // 
-            // cartesianChart1
-            // 
-            this.cartesianChart1.Location = new System.Drawing.Point(406, 3);
-            this.cartesianChart1.Name = "cartesianChart1";
-            this.cartesianChart1.Size = new System.Drawing.Size(462, 210);
-            this.cartesianChart1.TabIndex = 2;
-            this.cartesianChart1.Text = "cartesianChart1";
-            // 
             // AddProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1051,7 +1051,6 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "AddProject";
             this.Text = "Project Portfolio";
-            this.Load += new System.EventHandler(this.AddProject_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);

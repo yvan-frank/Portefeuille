@@ -27,16 +27,5 @@ namespace iPorfolio.Views.Home
             }
         }
 
-        private void AddProject_Load(object sender, System.EventArgs e)
-        {
-            cmbTypeProject.StartIndex = 1;
-            ProjectController projectc = new ProjectController();
-
-            foreach (ProjectModel project in projectc.GetAll())
-            {
-                cmbTypeProject.Items.Add(project.ChefProject);
-                txtProjectName.Text = project.ChefProject;
-            }
-        }
     }
 }
