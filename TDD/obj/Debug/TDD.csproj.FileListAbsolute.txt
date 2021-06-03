@@ -1,0 +1,15 @@
+E:\PROJECT\Portfolio\TDD\bin\Debug\TDD.exe.config
+E:\PROJECT\Portfolio\TDD\bin\Debug\TDD.exe
+E:\PROJECT\Portfolio\TDD\bin\Debug\TDD.pdb
+E:\PROJECT\Portfolio\TDD\bin\Debug\Controllers.dll
+E:\PROJECT\Portfolio\TDD\bin\Debug\DAL.dll
+E:\PROJECT\Portfolio\TDD\bin\Debug\Models.dll
+E:\PROJECT\Portfolio\TDD\bin\Debug\MySql.Data.dll
+E:\PROJECT\Portfolio\TDD\bin\Debug\Controllers.pdb
+E:\PROJECT\Portfolio\TDD\bin\Debug\DAL.pdb
+E:\PROJECT\Portfolio\TDD\bin\Debug\Models.pdb
+E:\PROJECT\Portfolio\TDD\obj\Debug\TDD.csprojAssemblyReference.cache
+E:\PROJECT\Portfolio\TDD\obj\Debug\TDD.csproj.CoreCompileInputs.cache
+E:\PROJECT\Portfolio\TDD\obj\Debug\TDD.csproj.CopyComplete
+E:\PROJECT\Portfolio\TDD\obj\Debug\TDD.exe
+E:\PROJECT\Portfolio\TDD\obj\Debug\TDD.pdb

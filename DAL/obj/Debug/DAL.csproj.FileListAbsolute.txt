@@ -1,0 +1,12 @@
+E:\PROJECT\Portfolio\DAL\bin\Debug\DAL.dll
+E:\PROJECT\Portfolio\DAL\bin\Debug\DAL.pdb
+E:\PROJECT\Portfolio\DAL\bin\Debug\Common.dll
+E:\PROJECT\Portfolio\DAL\bin\Debug\Models.dll
+E:\PROJECT\Portfolio\DAL\bin\Debug\MySql.Data.dll
+E:\PROJECT\Portfolio\DAL\bin\Debug\Common.pdb
+E:\PROJECT\Portfolio\DAL\bin\Debug\Models.pdb
+E:\PROJECT\Portfolio\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+E:\PROJECT\Portfolio\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+E:\PROJECT\Portfolio\DAL\obj\Debug\DAL.csproj.CopyComplete
+E:\PROJECT\Portfolio\DAL\obj\Debug\DAL.dll
+E:\PROJECT\Portfolio\DAL\obj\Debug\DAL.pdb

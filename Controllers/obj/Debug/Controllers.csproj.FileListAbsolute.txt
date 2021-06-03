@@ -1,0 +1,14 @@
+E:\PROJECT\Portfolio\Controllers\bin\Debug\Controllers.dll
+E:\PROJECT\Portfolio\Controllers\bin\Debug\Controllers.pdb
+E:\PROJECT\Portfolio\Controllers\bin\Debug\Common.dll
+E:\PROJECT\Portfolio\Controllers\bin\Debug\DAL.dll
+E:\PROJECT\Portfolio\Controllers\bin\Debug\Common.pdb
+E:\PROJECT\Portfolio\Controllers\bin\Debug\DAL.pdb
+E:\PROJECT\Portfolio\Controllers\obj\Debug\Controllers.csprojAssemblyReference.cache
+E:\PROJECT\Portfolio\Controllers\obj\Debug\Controllers.csproj.CoreCompileInputs.cache
+E:\PROJECT\Portfolio\Controllers\obj\Debug\Controllers.csproj.CopyComplete
+E:\PROJECT\Portfolio\Controllers\obj\Debug\Controllers.dll
+E:\PROJECT\Portfolio\Controllers\obj\Debug\Controllers.pdb
+E:\PROJECT\Portfolio\Controllers\bin\Debug\Models.dll
+E:\PROJECT\Portfolio\Controllers\bin\Debug\MySql.Data.dll
+E:\PROJECT\Portfolio\Controllers\bin\Debug\Models.pdb
