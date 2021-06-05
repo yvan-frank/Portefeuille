@@ -1,8 +1,5 @@
 ﻿
-using System.Collections.Generic;
 using System.Windows.Forms;
-using Controllers;
-using Models;
 
 namespace iPorfolio.Views.Home
 {

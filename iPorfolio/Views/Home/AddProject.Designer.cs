@@ -31,12 +31,42 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddProject));
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabProjetPan = new System.Windows.Forms.TabPage();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.lblNomChefProjet = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.cmbSelectProjet = new Bunifu.Framework.UI.BunifuDropdown();
+            this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.gunaShadowPanel3 = new Guna.UI.WinForms.GunaShadowPanel();
+            this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.label13 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.solidGauge1 = new LiveCharts.WinForms.SolidGauge();
+            this.guna2ShadowPanel2 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.bunifuGauge1 = new Bunifu.Framework.UI.BunifuGauge();
+            this.guna2ShadowPanel3 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.lblTasks = new System.Windows.Forms.Label();
+            this.solidGauge2 = new LiveCharts.WinForms.SolidGauge();
+            this.guna2ShadowPanel4 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
+            this.label24 = new System.Windows.Forms.Label();
+            this.guna2ShadowPanel5 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.guna2ShadowPanel6 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.guna2ShadowPanel7 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.guna2ShadowPanel8 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.gunaShadowPanel2 = new Guna.UI.WinForms.GunaShadowPanel();
             this.gunaSeparator8 = new Guna.UI.WinForms.GunaSeparator();
@@ -100,10 +130,18 @@
             this.gunaComboBox7 = new Guna.UI.WinForms.GunaComboBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.tabProjetPan.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.panel10.SuspendLayout();
+            this.panel9.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
-            this.gunaShadowPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.guna2ShadowPanel1.SuspendLayout();
+            this.guna2ShadowPanel2.SuspendLayout();
+            this.guna2ShadowPanel3.SuspendLayout();
+            this.guna2ShadowPanel4.SuspendLayout();
+            this.guna2ShadowPanel6.SuspendLayout();
+            this.guna2ShadowPanel7.SuspendLayout();
+            this.guna2ShadowPanel8.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.gunaShadowPanel2.SuspendLayout();
             this.gunaShadowPanel1.SuspendLayout();
@@ -121,7 +159,7 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabProjetPan);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -132,69 +170,416 @@
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(887, 601);
+            this.tabControl1.Size = new System.Drawing.Size(995, 601);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tabControl1.TabIndex = 0;
             // 
-            // tabPage1
+            // tabProjetPan
             // 
-            this.tabPage1.Controls.Add(this.flowLayoutPanel1);
-            this.tabPage1.ImageKey = "icons8_send_hot_list_48.png";
-            this.tabPage1.Location = new System.Drawing.Point(4, 30);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(879, 567);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Projet";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabProjetPan.Controls.Add(this.panel8);
+            this.tabProjetPan.Controls.Add(this.guna2GradientButton1);
+            this.tabProjetPan.Controls.Add(this.flowLayoutPanel1);
+            this.tabProjetPan.ImageKey = "icons8_send_hot_list_48.png";
+            this.tabProjetPan.Location = new System.Drawing.Point(4, 30);
+            this.tabProjetPan.Name = "tabProjetPan";
+            this.tabProjetPan.Padding = new System.Windows.Forms.Padding(3);
+            this.tabProjetPan.Size = new System.Drawing.Size(987, 567);
+            this.tabProjetPan.TabIndex = 0;
+            this.tabProjetPan.Text = "Projet";
+            this.tabProjetPan.UseVisualStyleBackColor = true;
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.panel10);
+            this.panel8.Controls.Add(this.panel9);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel8.Location = new System.Drawing.Point(3, 48);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(981, 73);
+            this.panel8.TabIndex = 6;
+            // 
+            // panel10
+            // 
+            this.panel10.Controls.Add(this.label35);
+            this.panel10.Controls.Add(this.label34);
+            this.panel10.Controls.Add(this.lblNomChefProjet);
+            this.panel10.Controls.Add(this.label32);
+            this.panel10.Controls.Add(this.label31);
+            this.panel10.Controls.Add(this.label30);
+            this.panel10.Controls.Add(this.label29);
+            this.panel10.Controls.Add(this.label28);
+            this.panel10.Location = new System.Drawing.Point(463, 3);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(515, 67);
+            this.panel10.TabIndex = 1;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(302, 44);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(114, 21);
+            this.label35.TabIndex = 10;
+            this.label35.Text = "En progression";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.ForeColor = System.Drawing.Color.Navy;
+            this.label34.Location = new System.Drawing.Point(237, 44);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(50, 21);
+            this.label34.TabIndex = 9;
+            this.label34.Text = "Statut";
+            // 
+            // lblNomChefProjet
+            // 
+            this.lblNomChefProjet.AutoSize = true;
+            this.lblNomChefProjet.Location = new System.Drawing.Point(102, 44);
+            this.lblNomChefProjet.Name = "lblNomChefProjet";
+            this.lblNomChefProjet.Size = new System.Drawing.Size(90, 21);
+            this.lblNomChefProjet.TabIndex = 8;
+            this.lblNomChefProjet.Text = "Luna Lovan";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(296, 5);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(145, 21);
+            this.label32.TabIndex = 7;
+            this.label32.Text = "Lundi 20 avril 2021";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(76, 5);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(145, 21);
+            this.label31.TabIndex = 6;
+            this.label31.Text = "Lundi 20 avril 2021";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.ForeColor = System.Drawing.Color.Navy;
+            this.label30.Location = new System.Drawing.Point(3, 44);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(87, 21);
+            this.label30.TabIndex = 5;
+            this.label30.Text = "Chef projet";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.ForeColor = System.Drawing.Color.Navy;
+            this.label29.Location = new System.Drawing.Point(238, 5);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(31, 21);
+            this.label29.TabIndex = 4;
+            this.label29.Text = "Fin";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.ForeColor = System.Drawing.Color.Navy;
+            this.label28.Location = new System.Drawing.Point(3, 5);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(52, 21);
+            this.label28.TabIndex = 3;
+            this.label28.Text = "Début";
+            // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.cmbSelectProjet);
+            this.panel9.Location = new System.Drawing.Point(-7, 0);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(467, 73);
+            this.panel9.TabIndex = 0;
+            // 
+            // cmbSelectProjet
+            // 
+            this.cmbSelectProjet.BackColor = System.Drawing.Color.Transparent;
+            this.cmbSelectProjet.BorderRadius = 3;
+            this.cmbSelectProjet.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.cmbSelectProjet.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.cmbSelectProjet.ForeColor = System.Drawing.Color.White;
+            this.cmbSelectProjet.Items = new string[] {
+        "Projet 1",
+        "Ptojet 2",
+        "Projet 3",
+        "Projet 4"};
+            this.cmbSelectProjet.Location = new System.Drawing.Point(4, 8);
+            this.cmbSelectProjet.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cmbSelectProjet.Name = "cmbSelectProjet";
+            this.cmbSelectProjet.NomalColor = System.Drawing.Color.Olive;
+            this.cmbSelectProjet.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.cmbSelectProjet.selectedIndex = 0;
+            this.cmbSelectProjet.Size = new System.Drawing.Size(459, 60);
+            this.cmbSelectProjet.TabIndex = 0;
+            // 
+            // guna2GradientButton1
+            // 
+            this.guna2GradientButton1.CheckedState.Parent = this.guna2GradientButton1;
+            this.guna2GradientButton1.CustomImages.Parent = this.guna2GradientButton1;
+            this.guna2GradientButton1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2GradientButton1.FillColor2 = System.Drawing.Color.Aquamarine;
+            this.guna2GradientButton1.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
+            this.guna2GradientButton1.ForeColor = System.Drawing.Color.White;
+            this.guna2GradientButton1.HoverState.Parent = this.guna2GradientButton1;
+            this.guna2GradientButton1.Location = new System.Drawing.Point(3, 3);
+            this.guna2GradientButton1.Name = "guna2GradientButton1";
+            this.guna2GradientButton1.ShadowDecoration.Parent = this.guna2GradientButton1;
+            this.guna2GradientButton1.Size = new System.Drawing.Size(981, 45);
+            this.guna2GradientButton1.TabIndex = 5;
+            this.guna2GradientButton1.Text = "Tableau de bord du projet";
+            this.guna2GradientButton1.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.gunaShadowPanel3);
-            this.flowLayoutPanel1.Controls.Add(this.cartesianChart1);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.Controls.Add(this.guna2ShadowPanel1);
+            this.flowLayoutPanel1.Controls.Add(this.guna2ShadowPanel2);
+            this.flowLayoutPanel1.Controls.Add(this.guna2ShadowPanel3);
+            this.flowLayoutPanel1.Controls.Add(this.guna2ShadowPanel4);
+            this.flowLayoutPanel1.Controls.Add(this.guna2ShadowPanel5);
+            this.flowLayoutPanel1.Controls.Add(this.guna2ShadowPanel6);
+            this.flowLayoutPanel1.Controls.Add(this.guna2ShadowPanel7);
+            this.flowLayoutPanel1.Controls.Add(this.guna2ShadowPanel8);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 197);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(873, 561);
-            this.flowLayoutPanel1.TabIndex = 0;
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(985, 333);
+            this.flowLayoutPanel1.TabIndex = 4;
             // 
-            // gunaShadowPanel3
+            // guna2ShadowPanel1
             // 
-            this.gunaShadowPanel3.BackColor = System.Drawing.Color.Transparent;
-            this.gunaShadowPanel3.BaseColor = System.Drawing.Color.White;
-            this.gunaShadowPanel3.Controls.Add(this.label13);
-            this.gunaShadowPanel3.Controls.Add(this.pictureBox1);
-            this.gunaShadowPanel3.Location = new System.Drawing.Point(3, 3);
-            this.gunaShadowPanel3.Name = "gunaShadowPanel3";
-            this.gunaShadowPanel3.ShadowColor = System.Drawing.Color.Black;
-            this.gunaShadowPanel3.Size = new System.Drawing.Size(397, 176);
-            this.gunaShadowPanel3.TabIndex = 1;
+            this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel1.Controls.Add(this.label13);
+            this.guna2ShadowPanel1.Controls.Add(this.solidGauge1);
+            this.guna2ShadowPanel1.FillColor = System.Drawing.Color.White;
+            this.guna2ShadowPanel1.Location = new System.Drawing.Point(3, 3);
+            this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
+            this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
+            this.guna2ShadowPanel1.ShadowShift = 6;
+            this.guna2ShadowPanel1.Size = new System.Drawing.Size(240, 168);
+            this.guna2ShadowPanel1.TabIndex = 0;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(175, 15);
+            this.label13.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label13.Location = new System.Drawing.Point(6, 9);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(112, 21);
-            this.label13.TabIndex = 21;
-            this.label13.Text = "Nom du projet";
+            this.label13.Size = new System.Drawing.Size(119, 21);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "Overall projects";
             // 
-            // pictureBox1
+            // solidGauge1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(166, 170);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.solidGauge1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.solidGauge1.Location = new System.Drawing.Point(46, 28);
+            this.solidGauge1.Name = "solidGauge1";
+            this.solidGauge1.Size = new System.Drawing.Size(130, 110);
+            this.solidGauge1.TabIndex = 0;
+            this.solidGauge1.Text = "solidGauge1";
+            // 
+            // guna2ShadowPanel2
+            // 
+            this.guna2ShadowPanel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel2.Controls.Add(this.bunifuGauge1);
+            this.guna2ShadowPanel2.FillColor = System.Drawing.Color.White;
+            this.guna2ShadowPanel2.Location = new System.Drawing.Point(249, 3);
+            this.guna2ShadowPanel2.Name = "guna2ShadowPanel2";
+            this.guna2ShadowPanel2.ShadowColor = System.Drawing.Color.Black;
+            this.guna2ShadowPanel2.Size = new System.Drawing.Size(240, 168);
+            this.guna2ShadowPanel2.TabIndex = 1;
+            // 
+            // bunifuGauge1
+            // 
+            this.bunifuGauge1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGauge1.BackgroundImage")));
+            this.bunifuGauge1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.bunifuGauge1.Location = new System.Drawing.Point(37, 29);
+            this.bunifuGauge1.Margin = new System.Windows.Forms.Padding(6);
+            this.bunifuGauge1.Name = "bunifuGauge1";
+            this.bunifuGauge1.ProgressBgColor = System.Drawing.Color.Silver;
+            this.bunifuGauge1.ProgressColor1 = System.Drawing.Color.DarkBlue;
+            this.bunifuGauge1.ProgressColor2 = System.Drawing.Color.Tomato;
+            this.bunifuGauge1.Size = new System.Drawing.Size(174, 117);
+            this.bunifuGauge1.TabIndex = 0;
+            this.bunifuGauge1.Thickness = 30;
+            this.bunifuGauge1.Value = 25;
+            // 
+            // guna2ShadowPanel3
+            // 
+            this.guna2ShadowPanel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel3.Controls.Add(this.lblTasks);
+            this.guna2ShadowPanel3.Controls.Add(this.solidGauge2);
+            this.guna2ShadowPanel3.FillColor = System.Drawing.Color.White;
+            this.guna2ShadowPanel3.Location = new System.Drawing.Point(495, 3);
+            this.guna2ShadowPanel3.Name = "guna2ShadowPanel3";
+            this.guna2ShadowPanel3.ShadowColor = System.Drawing.Color.Black;
+            this.guna2ShadowPanel3.Size = new System.Drawing.Size(240, 168);
+            this.guna2ShadowPanel3.TabIndex = 1;
+            // 
+            // lblTasks
+            // 
+            this.lblTasks.AutoSize = true;
+            this.lblTasks.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTasks.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblTasks.Location = new System.Drawing.Point(3, 7);
+            this.lblTasks.Name = "lblTasks";
+            this.lblTasks.Size = new System.Drawing.Size(102, 19);
+            this.lblTasks.TabIndex = 2;
+            this.lblTasks.Text = "Tâche du projet";
+            // 
+            // solidGauge2
+            // 
+            this.solidGauge2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.solidGauge2.Location = new System.Drawing.Point(48, 36);
+            this.solidGauge2.Name = "solidGauge2";
+            this.solidGauge2.Size = new System.Drawing.Size(130, 110);
+            this.solidGauge2.TabIndex = 1;
+            this.solidGauge2.Text = "solidGauge2";
+            // 
+            // guna2ShadowPanel4
+            // 
+            this.guna2ShadowPanel4.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel4.Controls.Add(this.cartesianChart1);
+            this.guna2ShadowPanel4.Controls.Add(this.label24);
+            this.guna2ShadowPanel4.FillColor = System.Drawing.Color.White;
+            this.guna2ShadowPanel4.Location = new System.Drawing.Point(741, 3);
+            this.guna2ShadowPanel4.Name = "guna2ShadowPanel4";
+            this.guna2ShadowPanel4.ShadowColor = System.Drawing.Color.Black;
+            this.guna2ShadowPanel4.Size = new System.Drawing.Size(240, 168);
+            this.guna2ShadowPanel4.TabIndex = 2;
             // 
             // cartesianChart1
             // 
-            this.cartesianChart1.Location = new System.Drawing.Point(406, 3);
+            this.cartesianChart1.Location = new System.Drawing.Point(22, 53);
             this.cartesianChart1.Name = "cartesianChart1";
-            this.cartesianChart1.Size = new System.Drawing.Size(462, 210);
+            this.cartesianChart1.Size = new System.Drawing.Size(200, 100);
             this.cartesianChart1.TabIndex = 2;
             this.cartesianChart1.Text = "cartesianChart1";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label24.Location = new System.Drawing.Point(3, 7);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(106, 19);
+            this.label24.TabIndex = 1;
+            this.label24.Text = "Tâche par statut";
+            // 
+            // guna2ShadowPanel5
+            // 
+            this.guna2ShadowPanel5.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel5.FillColor = System.Drawing.Color.White;
+            this.guna2ShadowPanel5.Location = new System.Drawing.Point(3, 177);
+            this.guna2ShadowPanel5.Name = "guna2ShadowPanel5";
+            this.guna2ShadowPanel5.ShadowColor = System.Drawing.Color.Black;
+            this.guna2ShadowPanel5.Size = new System.Drawing.Size(240, 119);
+            this.guna2ShadowPanel5.TabIndex = 3;
+            // 
+            // guna2ShadowPanel6
+            // 
+            this.guna2ShadowPanel6.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel6.Controls.Add(this.label25);
+            this.guna2ShadowPanel6.Controls.Add(this.label21);
+            this.guna2ShadowPanel6.FillColor = System.Drawing.Color.White;
+            this.guna2ShadowPanel6.Location = new System.Drawing.Point(249, 177);
+            this.guna2ShadowPanel6.Name = "guna2ShadowPanel6";
+            this.guna2ShadowPanel6.ShadowColor = System.Drawing.Color.Black;
+            this.guna2ShadowPanel6.Size = new System.Drawing.Size(240, 119);
+            this.guna2ShadowPanel6.TabIndex = 4;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.ForeColor = System.Drawing.Color.Navy;
+            this.label25.Location = new System.Drawing.Point(57, 49);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(97, 21);
+            this.label25.TabIndex = 2;
+            this.label25.Text = "FCFA 25.000";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label21.Location = new System.Drawing.Point(3, 6);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(126, 21);
+            this.label21.TabIndex = 1;
+            this.label21.Text = "Budget du projet";
+            // 
+            // guna2ShadowPanel7
+            // 
+            this.guna2ShadowPanel7.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel7.Controls.Add(this.label27);
+            this.guna2ShadowPanel7.Controls.Add(this.label22);
+            this.guna2ShadowPanel7.FillColor = System.Drawing.Color.White;
+            this.guna2ShadowPanel7.Location = new System.Drawing.Point(495, 177);
+            this.guna2ShadowPanel7.Name = "guna2ShadowPanel7";
+            this.guna2ShadowPanel7.ShadowColor = System.Drawing.Color.Black;
+            this.guna2ShadowPanel7.Size = new System.Drawing.Size(240, 119);
+            this.guna2ShadowPanel7.TabIndex = 5;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.ForeColor = System.Drawing.Color.Navy;
+            this.label27.Location = new System.Drawing.Point(70, 49);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(97, 21);
+            this.label27.TabIndex = 4;
+            this.label27.Text = "FCFA 25.000";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label22.Location = new System.Drawing.Point(3, 6);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(77, 21);
+            this.label22.TabIndex = 1;
+            this.label22.Text = "Dépenses";
+            // 
+            // guna2ShadowPanel8
+            // 
+            this.guna2ShadowPanel8.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel8.Controls.Add(this.label26);
+            this.guna2ShadowPanel8.Controls.Add(this.label23);
+            this.guna2ShadowPanel8.FillColor = System.Drawing.Color.White;
+            this.guna2ShadowPanel8.Location = new System.Drawing.Point(741, 177);
+            this.guna2ShadowPanel8.Name = "guna2ShadowPanel8";
+            this.guna2ShadowPanel8.ShadowColor = System.Drawing.Color.Black;
+            this.guna2ShadowPanel8.Size = new System.Drawing.Size(240, 119);
+            this.guna2ShadowPanel8.TabIndex = 6;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.ForeColor = System.Drawing.Color.Navy;
+            this.label26.Location = new System.Drawing.Point(44, 49);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(97, 21);
+            this.label26.TabIndex = 3;
+            this.label26.Text = "FCFA 25.000";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label23.Location = new System.Drawing.Point(3, 6);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(63, 21);
+            this.label23.TabIndex = 1;
+            this.label23.Text = "Balance";
             // 
             // tabPage2
             // 
@@ -204,7 +589,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 30);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(879, 567);
+            this.tabPage2.Size = new System.Drawing.Size(987, 567);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Créer un projet";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -728,7 +1113,7 @@
             this.tabPage3.Controls.Add(this.gunaComboBox7);
             this.tabPage3.Location = new System.Drawing.Point(4, 30);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(879, 567);
+            this.tabPage3.Size = new System.Drawing.Size(987, 567);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Paramétrer le projet";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -1046,17 +1431,32 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(887, 601);
+            this.ClientSize = new System.Drawing.Size(995, 601);
             this.ControlBox = false;
             this.Controls.Add(this.tabControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddProject";
             this.Text = "Project Portfolio";
             this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
+            this.tabProjetPan.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
+            this.panel9.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
-            this.gunaShadowPanel3.ResumeLayout(false);
-            this.gunaShadowPanel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.guna2ShadowPanel1.ResumeLayout(false);
+            this.guna2ShadowPanel1.PerformLayout();
+            this.guna2ShadowPanel2.ResumeLayout(false);
+            this.guna2ShadowPanel3.ResumeLayout(false);
+            this.guna2ShadowPanel3.PerformLayout();
+            this.guna2ShadowPanel4.ResumeLayout(false);
+            this.guna2ShadowPanel4.PerformLayout();
+            this.guna2ShadowPanel6.ResumeLayout(false);
+            this.guna2ShadowPanel6.PerformLayout();
+            this.guna2ShadowPanel7.ResumeLayout(false);
+            this.guna2ShadowPanel7.PerformLayout();
+            this.guna2ShadowPanel8.ResumeLayout(false);
+            this.guna2ShadowPanel8.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.gunaShadowPanel2.ResumeLayout(false);
             this.gunaShadowPanel2.PerformLayout();
@@ -1086,7 +1486,7 @@
         #endregion
 
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabProjetPan;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.ImageList imageList1;
         private Guna.UI.WinForms.GunaShadowPanel gunaShadowPanel2;
@@ -1123,10 +1523,6 @@
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button btnafficher;
         private Guna.UI2.WinForms.Guna2Button btnCreate;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private Guna.UI.WinForms.GunaShadowPanel gunaShadowPanel3;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TabPage tabPage3;
         private Guna.UI.WinForms.GunaSeparator gunaSeparator9;
         private Guna.UI.WinForms.GunaComboBox gunaComboBox7;
@@ -1153,6 +1549,40 @@
         private Guna.UI.WinForms.GunaLineTextBox gunaLineTextBox7;
         private System.Windows.Forms.Label label20;
         private Guna.UI2.WinForms.Guna2ComboBox cmbTypeProject;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
+        private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel2;
+        private LiveCharts.WinForms.SolidGauge solidGauge1;
+        private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel3;
+        private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel4;
+        private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel5;
+        private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel6;
+        private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel7;
+        private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel8;
+        private System.Windows.Forms.Panel panel8;
+        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton1;
+        private System.Windows.Forms.Label label13;
+        private LiveCharts.WinForms.SolidGauge solidGauge2;
         private LiveCharts.WinForms.CartesianChart cartesianChart1;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label lblTasks;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Panel panel9;
+        private Bunifu.Framework.UI.BunifuGauge bunifuGauge1;
+        private Bunifu.Framework.UI.BunifuDropdown cmbSelectProjet;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label lblNomChefProjet;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label28;
     }
 }

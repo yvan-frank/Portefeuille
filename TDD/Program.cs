@@ -8,13 +8,15 @@ namespace TDD
     {
         static void Main(string[] args)
         {
-            ProjectDal project = new ProjectDal();
+            CritereDal project = new CritereDal();
 
-            foreach (ProjectModel model in project.GetAll())
+            foreach (CriteriaModel model in project.GetAll())
             {
-                Console.WriteLine(model.ChefProject);
+                Console.WriteLine(model.CoherenceDegreeWithTheMission);
+
             }
-           
+
+            
 
             Console.ReadKey();
         }

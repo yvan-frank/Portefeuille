@@ -1,7 +1,5 @@
-﻿
-using System;
+﻿using System;
 using System.Data;
-using System.Dynamic;
 using MySql.Data.MySqlClient;
 
 namespace DAL.SqlUtility
@@ -64,6 +62,33 @@ namespace DAL.SqlUtility
                 using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
                 {
                     DataSet ds = new DataSet();
+
+                    if (da.SelectCommand.Connection == null)
+                    {
+                        //return null;
+                    }
+                    else
+                    {
+                        da.Fill(ds, "ds");
+                        cmd.Parameters.Clear();
+
+                    }
+
+
+                    return ds;
+                }
+            }
+        }
+
+        public static void Query1(string sql, params MySqlParameter[] cmdSqlParameters)
+        {
+            using (GetConnection())
+            {
+                MySqlCommand cmd = new MySqlCommand();
+                PreparedCommand(cmd, GetConnection(), null, sql, cmdSqlParameters);
+                using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
+                {
+                    DataSet ds = new DataSet();
                     try
                     {
                         da.Fill(ds, "ds");
@@ -73,8 +98,6 @@ namespace DAL.SqlUtility
                     {
                         Console.WriteLine(e.Message);
                     }
-
-                    return ds;
                 }
             }
         }

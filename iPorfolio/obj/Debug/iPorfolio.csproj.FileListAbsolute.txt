@@ -35,3 +35,4 @@ E:\PROJECT\Portfolio\iPorfolio\bin\Debug\LiveCharts.WinForms.pdb
 E:\PROJECT\Portfolio\iPorfolio\bin\Debug\LiveCharts.WinForms.xml
 E:\PROJECT\Portfolio\iPorfolio\bin\Debug\LiveCharts.Wpf.pdb
 E:\PROJECT\Portfolio\iPorfolio\bin\Debug\LiveCharts.Wpf.xml
+E:\PROJECT\Portfolio\iPorfolio\obj\Debug\iPorfolio.Views.Home.TestForm.resources

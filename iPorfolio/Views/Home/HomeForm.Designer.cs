@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeForm));
             this.panHeader = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnEvaluation = new Guna.UI2.WinForms.Guna2Button();
             this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
@@ -53,7 +53,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panHeader.BackColor = System.Drawing.Color.White;
             this.panHeader.Controls.Add(this.pictureBox1);
-            this.panHeader.Controls.Add(this.guna2Button1);
+            this.panHeader.Controls.Add(this.btnEvaluation);
             this.panHeader.Controls.Add(this.bunifuThinButton21);
             this.panHeader.Controls.Add(this.guna2Button4);
             this.panHeader.Controls.Add(this.guna2Button3);
@@ -78,21 +78,21 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // guna2Button1
+            // btnEvaluation
             // 
-            this.guna2Button1.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.FillColor = System.Drawing.Color.White;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(311, 4);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(200, 31);
-            this.guna2Button1.TabIndex = 10;
-            this.guna2Button1.Text = "Evaluation du portefeuille";
+            this.btnEvaluation.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnEvaluation.CheckedState.Parent = this.btnEvaluation;
+            this.btnEvaluation.CustomImages.Parent = this.btnEvaluation;
+            this.btnEvaluation.FillColor = System.Drawing.Color.White;
+            this.btnEvaluation.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnEvaluation.ForeColor = System.Drawing.Color.Black;
+            this.btnEvaluation.HoverState.Parent = this.btnEvaluation;
+            this.btnEvaluation.Location = new System.Drawing.Point(311, 4);
+            this.btnEvaluation.Name = "btnEvaluation";
+            this.btnEvaluation.ShadowDecoration.Parent = this.btnEvaluation;
+            this.btnEvaluation.Size = new System.Drawing.Size(200, 31);
+            this.btnEvaluation.TabIndex = 10;
+            this.btnEvaluation.Text = "Evaluation du portefeuille";
             // 
             // bunifuThinButton21
             // 
@@ -240,11 +240,12 @@
             // 
             // panContainer
             // 
-            this.panContainer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.panContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panContainer.Location = new System.Drawing.Point(0, 58);
+            this.panContainer.Location = new System.Drawing.Point(0, 41);
             this.panContainer.Name = "panContainer";
-            this.panContainer.Size = new System.Drawing.Size(999, 592);
+            this.panContainer.Size = new System.Drawing.Size(999, 607);
             this.panContainer.TabIndex = 4;
             // 
             // guna2ShadowPanel1
@@ -257,7 +258,7 @@
             this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
             this.guna2ShadowPanel1.ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.ForwardDiagonal;
-            this.guna2ShadowPanel1.Size = new System.Drawing.Size(1008, 10);
+            this.guna2ShadowPanel1.Size = new System.Drawing.Size(1008, 7);
             this.guna2ShadowPanel1.TabIndex = 1;
             // 
             // HomeForm
@@ -298,7 +299,7 @@
         private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton21;
         private System.Windows.Forms.Panel panContainer;
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button btnEvaluation;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
