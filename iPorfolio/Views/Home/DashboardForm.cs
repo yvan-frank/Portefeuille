@@ -1,12 +1,13 @@
 ﻿using System;
-using System.Configuration;
 using System.Windows.Forms.DataVisualization.Charting;
 using System.Windows.Forms;
+using Controllers;
 
 namespace iPorfolio.Views.Home
 {
     public partial class DashboardForm : Form
     {
+        private ProjectController _project = new ProjectController();
         public DashboardForm()
         {
             InitializeComponent();
@@ -20,6 +21,7 @@ namespace iPorfolio.Views.Home
             chart1.Series[0].Points.DataBindXY(x, y);
             chart1.Legends[0].Enabled = true;
             //chart1.ChartAreas[0].Area3DStyle.Enable3D = true;
+            lblCountProject.Text = _project.CountProject().ToString();
         }
     }
 }

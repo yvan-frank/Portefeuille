@@ -58,7 +58,6 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.lblResult = new System.Windows.Forms.Label();
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
-            this.guna2NotificationPaint1 = new Guna.UI2.WinForms.Guna2NotificationPaint(this.components);
             this.SuspendLayout();
             // 
             // cmbCoMission
@@ -444,7 +443,6 @@
             // 
             // guna2AnimateWindow1
             // 
-            this.guna2AnimateWindow1.Interval = 600;
             this.guna2AnimateWindow1.TargetForm = this;
             // 
             // TestForm
@@ -482,6 +480,7 @@
             this.Controls.Add(this.cmbCoMission);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "TestForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TestForm";
             this.Load += new System.EventHandler(this.TestForm_Load);
             this.ResumeLayout(false);
@@ -520,6 +519,5 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label lblResult;
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
-        private Guna.UI2.WinForms.Guna2NotificationPaint guna2NotificationPaint1;
     }
 }

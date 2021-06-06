@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Text.RegularExpressions;
+using Controllers;
 using DAL;
 using Models;
 
@@ -8,15 +10,21 @@ namespace TDD
     {
         static void Main(string[] args)
         {
-            CritereDal project = new CritereDal();
+            ProjectController project = new ProjectController();
 
-            foreach (CriteriaModel model in project.GetAll())
+            string num = project.GenerateNumber();
+            var substring = num.Substring(0, 5);
+            string str = project.GenerateNumber();
+            string[] numbers = Regex.Split(str, @"\D+");
+            foreach (string nbr in numbers)
             {
-                Console.WriteLine(model.CoherenceDegreeWithTheMission);
-
+                int number;
+                if (int.TryParse(nbr, out number))
+                {
+                    number++;
+                    Console.WriteLine(substring + number);
+                }
             }
-
-            
 
             Console.ReadKey();
         }

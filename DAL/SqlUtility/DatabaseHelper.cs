@@ -6,9 +6,55 @@ namespace DAL.SqlUtility
 {
     public abstract class DatabaseHelper:DbUtils
     {
-        public DatabaseHelper()
+
+        public static int ExecuteSql(string sql, params MySqlParameter[] cmSqlParameters)
         {
-            GetConnection();
+            using (var con = GetConnection())
+            {
+                using (MySqlCommand cmd = new MySqlCommand())
+                {
+                    try
+                    {
+                        PreparedCommand(cmd, GetConnection(), null, sql, cmSqlParameters);
+                        int rows = cmd.ExecuteNonQuery();
+                        cmd.Parameters.Clear();
+                        return rows;
+                    }
+                    catch (MySqlException e)
+                    {
+                        throw e;
+                    }
+                }
+            }
+        }
+
+
+        public static int ExecuteSqlCount(string sql)
+        {
+            using (var con = GetConnection())
+            {
+                int val;
+                try
+                {
+                    using (MySqlCommand command = new MySqlCommand())
+                    {
+                        con.Open();
+                        command.Connection = con;
+                        command.CommandText = sql;
+                    
+                        val = Convert.ToInt32(command.ExecuteScalar());
+                        command.Dispose();
+                        con.Close();
+                    }
+
+                    return val;
+                }
+                catch (MySqlException e)
+                {
+                    return 0;
+                }
+
+            }
         }
         private static void PreparedCommand(MySqlCommand cmd, MySqlConnection con, MySqlTransaction trans,
             string cmText, MySqlParameter[] cmdParameters)
@@ -28,7 +74,8 @@ namespace DAL.SqlUtility
             }
             catch (MySqlException e)
             {
-                Console.WriteLine(e.Message);
+                con.Close();
+                throw e;
             }
 
             try
@@ -54,7 +101,6 @@ namespace DAL.SqlUtility
         }
         public static DataSet Query(string sql, params  MySqlParameter[] cmdSqlParameters)
         {
-
             using (GetConnection())
             {
                 MySqlCommand cmd = new MySqlCommand();
@@ -71,35 +117,85 @@ namespace DAL.SqlUtility
                     {
                         da.Fill(ds, "ds");
                         cmd.Parameters.Clear();
-
                     }
-
-
                     return ds;
                 }
             }
         }
 
-        public static void Query1(string sql, params MySqlParameter[] cmdSqlParameters)
+        public static MySqlDataReader ExecuteDataReader(string sql, params MySqlParameter[] cmdParameter)
+        {
+            try
+            {
+                using (GetConnection())
+                {
+                
+                    MySqlCommand cmd = new MySqlCommand();
+                    PreparedCommand(cmd, GetConnection(), null, sql, cmdParameter);
+                    MySqlDataReader reader = cmd.ExecuteReader();
+                    return reader;
+
+                }
+            }
+            catch (MySqlException e)
+            {
+                GetConnection().Close();
+                throw e;
+            }
+        }
+
+        public static bool Exists(string sql, params MySqlParameter[] cmdParameters)
+        {
+            object obj = GetSingle(sql, cmdParameters);
+            int cmdResult;
+            if ((Object.Equals(obj, null)) || (Object.Equals(obj, System.DBNull.Value)))
+            {
+                cmdResult = 0;
+            }
+            else
+            {
+                cmdResult = int.Parse(obj.ToString());
+            }
+
+            if (cmdResult == 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+
+        }
+
+        public static object GetSingle(string sqlString, params MySqlParameter[] cmdParameters)
         {
             using (GetConnection())
             {
-                MySqlCommand cmd = new MySqlCommand();
-                PreparedCommand(cmd, GetConnection(), null, sql, cmdSqlParameters);
-                using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
+                using (MySqlCommand cmd = new MySqlCommand(sqlString, GetConnection()))
                 {
-                    DataSet ds = new DataSet();
                     try
                     {
-                        da.Fill(ds, "ds");
-                        cmd.Parameters.Clear();
+                        GetConnection().Open();
+                        object obj = cmd.ExecuteScalar();
+                        if (Object.Equals(obj, null) || Object.Equals(obj, DBNull.Value))
+                        {
+                            return null;
+                        }
+                        else
+                        {
+                            return obj;
+                        }
                     }
-                    catch (MySqlException e)
+                    catch (Exception e)
                     {
-                        Console.WriteLine(e.Message);
+                        GetConnection().Close();
+                        throw e;
                     }
                 }
             }
         }
+
+
     }
 }

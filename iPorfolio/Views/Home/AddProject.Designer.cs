@@ -73,32 +73,33 @@
             this.gunaComboBox6 = new Guna.UI.WinForms.GunaComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.gunaSeparator7 = new Guna.UI.WinForms.GunaSeparator();
-            this.gunaComboBox5 = new Guna.UI.WinForms.GunaComboBox();
+            this.cmbStatut = new Guna.UI.WinForms.GunaComboBox();
             this.gunaSeparator6 = new Guna.UI.WinForms.GunaSeparator();
-            this.gunaComboBox4 = new Guna.UI.WinForms.GunaComboBox();
+            this.cmbEtat = new Guna.UI.WinForms.GunaComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.gunaLineTextBox2 = new Guna.UI.WinForms.GunaLineTextBox();
+            this.txtCout = new Guna.UI.WinForms.GunaLineTextBox();
             this.gunaSeparator5 = new Guna.UI.WinForms.GunaSeparator();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.gunaComboBox3 = new Guna.UI.WinForms.GunaComboBox();
+            this.cmdChef = new Guna.UI.WinForms.GunaComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.gunaShadowPanel1 = new Guna.UI.WinForms.GunaShadowPanel();
+            this.lblProjectNumber = new System.Windows.Forms.Label();
             this.cmbTypeProject = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btnCreate = new Guna.UI2.WinForms.Guna2Button();
             this.btnafficher = new Guna.UI2.WinForms.Guna2Button();
             this.gunaSeparator4 = new Guna.UI.WinForms.GunaSeparator();
-            this.gunaComboBox2 = new Guna.UI.WinForms.GunaComboBox();
+            this.cmbCate = new Guna.UI.WinForms.GunaComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.gunaSeparator3 = new Guna.UI.WinForms.GunaSeparator();
             this.label5 = new System.Windows.Forms.Label();
-            this.gunaLineTextBox1 = new Guna.UI.WinForms.GunaLineTextBox();
+            this.txtDescrip = new Guna.UI.WinForms.GunaLineTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.gunaSeparator2 = new Guna.UI.WinForms.GunaSeparator();
-            this.gunaDateTimePicker1 = new Guna.UI.WinForms.GunaDateTimePicker();
+            this.dateDebut = new Guna.UI.WinForms.GunaDateTimePicker();
             this.gunaSeparator1 = new Guna.UI.WinForms.GunaSeparator();
-            this.gunaDateTimePicker2 = new Guna.UI.WinForms.GunaDateTimePicker();
+            this.dateFin = new Guna.UI.WinForms.GunaDateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtProjectName = new Guna.UI.WinForms.GunaLineTextBox();
@@ -301,27 +302,22 @@
             // 
             this.cmbSelectProjet.BackColor = System.Drawing.Color.Transparent;
             this.cmbSelectProjet.BorderRadius = 3;
-            this.cmbSelectProjet.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.cmbSelectProjet.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.cmbSelectProjet.ForeColor = System.Drawing.Color.White;
-            this.cmbSelectProjet.Items = new string[] {
-        "Projet 1",
-        "Ptojet 2",
-        "Projet 3",
-        "Projet 4"};
-            this.cmbSelectProjet.Location = new System.Drawing.Point(4, 8);
+            this.cmbSelectProjet.Items = new string[0];
+            this.cmbSelectProjet.Location = new System.Drawing.Point(8, 8);
             this.cmbSelectProjet.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbSelectProjet.Name = "cmbSelectProjet";
-            this.cmbSelectProjet.NomalColor = System.Drawing.Color.Olive;
+            this.cmbSelectProjet.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.cmbSelectProjet.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.cmbSelectProjet.selectedIndex = 0;
-            this.cmbSelectProjet.Size = new System.Drawing.Size(459, 60);
+            this.cmbSelectProjet.selectedIndex = -1;
+            this.cmbSelectProjet.Size = new System.Drawing.Size(455, 60);
             this.cmbSelectProjet.TabIndex = 0;
             // 
             // guna2GradientButton1
             // 
             this.guna2GradientButton1.CheckedState.Parent = this.guna2GradientButton1;
             this.guna2GradientButton1.CustomImages.Parent = this.guna2GradientButton1;
+            this.guna2GradientButton1.DisabledState.Parent = this.guna2GradientButton1;
             this.guna2GradientButton1.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2GradientButton1.FillColor2 = System.Drawing.Color.Aquamarine;
             this.guna2GradientButton1.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
@@ -603,18 +599,18 @@
             this.gunaShadowPanel2.Controls.Add(this.gunaComboBox6);
             this.gunaShadowPanel2.Controls.Add(this.label12);
             this.gunaShadowPanel2.Controls.Add(this.gunaSeparator7);
-            this.gunaShadowPanel2.Controls.Add(this.gunaComboBox5);
+            this.gunaShadowPanel2.Controls.Add(this.cmbStatut);
             this.gunaShadowPanel2.Controls.Add(this.gunaSeparator6);
-            this.gunaShadowPanel2.Controls.Add(this.gunaComboBox4);
+            this.gunaShadowPanel2.Controls.Add(this.cmbEtat);
             this.gunaShadowPanel2.Controls.Add(this.label11);
             this.gunaShadowPanel2.Controls.Add(this.label10);
-            this.gunaShadowPanel2.Controls.Add(this.gunaLineTextBox2);
+            this.gunaShadowPanel2.Controls.Add(this.txtCout);
             this.gunaShadowPanel2.Controls.Add(this.gunaSeparator5);
             this.gunaShadowPanel2.Controls.Add(this.label9);
             this.gunaShadowPanel2.Controls.Add(this.label7);
-            this.gunaShadowPanel2.Controls.Add(this.gunaComboBox3);
+            this.gunaShadowPanel2.Controls.Add(this.cmdChef);
             this.gunaShadowPanel2.Controls.Add(this.label8);
-            this.gunaShadowPanel2.Location = new System.Drawing.Point(425, 25);
+            this.gunaShadowPanel2.Location = new System.Drawing.Point(451, 90);
             this.gunaShadowPanel2.Name = "gunaShadowPanel2";
             this.gunaShadowPanel2.ShadowColor = System.Drawing.Color.Black;
             this.gunaShadowPanel2.Size = new System.Drawing.Size(458, 361);
@@ -671,30 +667,27 @@
             this.gunaSeparator7.Size = new System.Drawing.Size(176, 10);
             this.gunaSeparator7.TabIndex = 45;
             // 
-            // gunaComboBox5
+            // cmbStatut
             // 
-            this.gunaComboBox5.BackColor = System.Drawing.Color.Transparent;
-            this.gunaComboBox5.BaseColor = System.Drawing.Color.White;
-            this.gunaComboBox5.BorderColor = System.Drawing.Color.Transparent;
-            this.gunaComboBox5.BorderSize = 0;
-            this.gunaComboBox5.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.gunaComboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.gunaComboBox5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gunaComboBox5.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaComboBox5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaComboBox5.ForeColor = System.Drawing.Color.Black;
-            this.gunaComboBox5.FormattingEnabled = true;
-            this.gunaComboBox5.Items.AddRange(new object[] {
-            "Operationnel",
-            "Strategique"});
-            this.gunaComboBox5.Location = new System.Drawing.Point(17, 288);
-            this.gunaComboBox5.MaxDropDownItems = 100;
-            this.gunaComboBox5.Name = "gunaComboBox5";
-            this.gunaComboBox5.OnHoverItemBaseColor = System.Drawing.Color.White;
-            this.gunaComboBox5.OnHoverItemForeColor = System.Drawing.Color.Black;
-            this.gunaComboBox5.Size = new System.Drawing.Size(176, 30);
-            this.gunaComboBox5.Sorted = true;
-            this.gunaComboBox5.TabIndex = 44;
+            this.cmbStatut.BackColor = System.Drawing.Color.Transparent;
+            this.cmbStatut.BaseColor = System.Drawing.Color.White;
+            this.cmbStatut.BorderColor = System.Drawing.Color.Transparent;
+            this.cmbStatut.BorderSize = 0;
+            this.cmbStatut.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbStatut.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbStatut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbStatut.FocusedColor = System.Drawing.Color.Empty;
+            this.cmbStatut.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbStatut.ForeColor = System.Drawing.Color.Black;
+            this.cmbStatut.FormattingEnabled = true;
+            this.cmbStatut.Location = new System.Drawing.Point(17, 288);
+            this.cmbStatut.MaxDropDownItems = 100;
+            this.cmbStatut.Name = "cmbStatut";
+            this.cmbStatut.OnHoverItemBaseColor = System.Drawing.Color.White;
+            this.cmbStatut.OnHoverItemForeColor = System.Drawing.Color.Black;
+            this.cmbStatut.Size = new System.Drawing.Size(176, 30);
+            this.cmbStatut.Sorted = true;
+            this.cmbStatut.TabIndex = 44;
             // 
             // gunaSeparator6
             // 
@@ -704,30 +697,27 @@
             this.gunaSeparator6.Size = new System.Drawing.Size(176, 10);
             this.gunaSeparator6.TabIndex = 43;
             // 
-            // gunaComboBox4
+            // cmbEtat
             // 
-            this.gunaComboBox4.BackColor = System.Drawing.Color.Transparent;
-            this.gunaComboBox4.BaseColor = System.Drawing.Color.White;
-            this.gunaComboBox4.BorderColor = System.Drawing.Color.Transparent;
-            this.gunaComboBox4.BorderSize = 0;
-            this.gunaComboBox4.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.gunaComboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.gunaComboBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gunaComboBox4.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaComboBox4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaComboBox4.ForeColor = System.Drawing.Color.Black;
-            this.gunaComboBox4.FormattingEnabled = true;
-            this.gunaComboBox4.Items.AddRange(new object[] {
-            "Operationnel",
-            "Strategique"});
-            this.gunaComboBox4.Location = new System.Drawing.Point(263, 205);
-            this.gunaComboBox4.MaxDropDownItems = 100;
-            this.gunaComboBox4.Name = "gunaComboBox4";
-            this.gunaComboBox4.OnHoverItemBaseColor = System.Drawing.Color.White;
-            this.gunaComboBox4.OnHoverItemForeColor = System.Drawing.Color.Black;
-            this.gunaComboBox4.Size = new System.Drawing.Size(176, 30);
-            this.gunaComboBox4.Sorted = true;
-            this.gunaComboBox4.TabIndex = 42;
+            this.cmbEtat.BackColor = System.Drawing.Color.Transparent;
+            this.cmbEtat.BaseColor = System.Drawing.Color.White;
+            this.cmbEtat.BorderColor = System.Drawing.Color.Transparent;
+            this.cmbEtat.BorderSize = 0;
+            this.cmbEtat.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbEtat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEtat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbEtat.FocusedColor = System.Drawing.Color.Empty;
+            this.cmbEtat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbEtat.ForeColor = System.Drawing.Color.Black;
+            this.cmbEtat.FormattingEnabled = true;
+            this.cmbEtat.Location = new System.Drawing.Point(263, 205);
+            this.cmbEtat.MaxDropDownItems = 100;
+            this.cmbEtat.Name = "cmbEtat";
+            this.cmbEtat.OnHoverItemBaseColor = System.Drawing.Color.White;
+            this.cmbEtat.OnHoverItemForeColor = System.Drawing.Color.Black;
+            this.cmbEtat.Size = new System.Drawing.Size(176, 30);
+            this.cmbEtat.Sorted = true;
+            this.cmbEtat.TabIndex = 42;
             // 
             // label11
             // 
@@ -747,23 +737,23 @@
             this.label10.TabIndex = 38;
             this.label10.Text = "Etat";
             // 
-            // gunaLineTextBox2
+            // txtCout
             // 
-            this.gunaLineTextBox2.BackColor = System.Drawing.Color.White;
-            this.gunaLineTextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.gunaLineTextBox2.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(44)))), ((int)(((byte)(64)))));
-            this.gunaLineTextBox2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLineTextBox2.LineColor = System.Drawing.Color.Silver;
-            this.gunaLineTextBox2.LineSize = 2;
-            this.gunaLineTextBox2.Location = new System.Drawing.Point(17, 204);
-            this.gunaLineTextBox2.MaxLength = 1000;
-            this.gunaLineTextBox2.Name = "gunaLineTextBox2";
-            this.gunaLineTextBox2.PasswordChar = '\0';
-            this.gunaLineTextBox2.SelectedText = "";
-            this.gunaLineTextBox2.ShortcutsEnabled = false;
-            this.gunaLineTextBox2.Size = new System.Drawing.Size(166, 28);
-            this.gunaLineTextBox2.TabIndex = 37;
-            this.gunaLineTextBox2.TextOffsetX = 0;
+            this.txtCout.BackColor = System.Drawing.Color.White;
+            this.txtCout.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCout.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(44)))), ((int)(((byte)(64)))));
+            this.txtCout.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCout.LineColor = System.Drawing.Color.Silver;
+            this.txtCout.LineSize = 2;
+            this.txtCout.Location = new System.Drawing.Point(17, 204);
+            this.txtCout.MaxLength = 1000;
+            this.txtCout.Name = "txtCout";
+            this.txtCout.PasswordChar = '\0';
+            this.txtCout.SelectedText = "";
+            this.txtCout.ShortcutsEnabled = false;
+            this.txtCout.Size = new System.Drawing.Size(166, 28);
+            this.txtCout.TabIndex = 37;
+            this.txtCout.TextOffsetX = 0;
             // 
             // gunaSeparator5
             // 
@@ -792,30 +782,30 @@
             this.label7.TabIndex = 36;
             this.label7.Text = "Options avancées";
             // 
-            // gunaComboBox3
+            // cmdChef
             // 
-            this.gunaComboBox3.BackColor = System.Drawing.Color.Transparent;
-            this.gunaComboBox3.BaseColor = System.Drawing.Color.White;
-            this.gunaComboBox3.BorderColor = System.Drawing.Color.Transparent;
-            this.gunaComboBox3.BorderSize = 0;
-            this.gunaComboBox3.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.gunaComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.gunaComboBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gunaComboBox3.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaComboBox3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaComboBox3.ForeColor = System.Drawing.Color.Black;
-            this.gunaComboBox3.FormattingEnabled = true;
-            this.gunaComboBox3.Items.AddRange(new object[] {
+            this.cmdChef.BackColor = System.Drawing.Color.Transparent;
+            this.cmdChef.BaseColor = System.Drawing.Color.White;
+            this.cmdChef.BorderColor = System.Drawing.Color.Transparent;
+            this.cmdChef.BorderSize = 0;
+            this.cmdChef.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmdChef.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmdChef.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmdChef.FocusedColor = System.Drawing.Color.Empty;
+            this.cmdChef.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdChef.ForeColor = System.Drawing.Color.Black;
+            this.cmdChef.FormattingEnabled = true;
+            this.cmdChef.Items.AddRange(new object[] {
             "Operationnel",
             "Strategique"});
-            this.gunaComboBox3.Location = new System.Drawing.Point(7, 126);
-            this.gunaComboBox3.MaxDropDownItems = 100;
-            this.gunaComboBox3.Name = "gunaComboBox3";
-            this.gunaComboBox3.OnHoverItemBaseColor = System.Drawing.Color.White;
-            this.gunaComboBox3.OnHoverItemForeColor = System.Drawing.Color.Black;
-            this.gunaComboBox3.Size = new System.Drawing.Size(176, 30);
-            this.gunaComboBox3.Sorted = true;
-            this.gunaComboBox3.TabIndex = 36;
+            this.cmdChef.Location = new System.Drawing.Point(7, 126);
+            this.cmdChef.MaxDropDownItems = 100;
+            this.cmdChef.Name = "cmdChef";
+            this.cmdChef.OnHoverItemBaseColor = System.Drawing.Color.White;
+            this.cmdChef.OnHoverItemForeColor = System.Drawing.Color.Black;
+            this.cmdChef.Size = new System.Drawing.Size(176, 30);
+            this.cmdChef.Sorted = true;
+            this.cmdChef.TabIndex = 36;
             // 
             // label8
             // 
@@ -831,29 +821,39 @@
             this.gunaShadowPanel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gunaShadowPanel1.BackColor = System.Drawing.Color.Transparent;
             this.gunaShadowPanel1.BaseColor = System.Drawing.Color.White;
+            this.gunaShadowPanel1.Controls.Add(this.lblProjectNumber);
             this.gunaShadowPanel1.Controls.Add(this.cmbTypeProject);
             this.gunaShadowPanel1.Controls.Add(this.btnCreate);
             this.gunaShadowPanel1.Controls.Add(this.btnafficher);
             this.gunaShadowPanel1.Controls.Add(this.gunaSeparator4);
-            this.gunaShadowPanel1.Controls.Add(this.gunaComboBox2);
+            this.gunaShadowPanel1.Controls.Add(this.cmbCate);
             this.gunaShadowPanel1.Controls.Add(this.label6);
             this.gunaShadowPanel1.Controls.Add(this.gunaSeparator3);
             this.gunaShadowPanel1.Controls.Add(this.label5);
-            this.gunaShadowPanel1.Controls.Add(this.gunaLineTextBox1);
+            this.gunaShadowPanel1.Controls.Add(this.txtDescrip);
             this.gunaShadowPanel1.Controls.Add(this.label4);
             this.gunaShadowPanel1.Controls.Add(this.gunaSeparator2);
-            this.gunaShadowPanel1.Controls.Add(this.gunaDateTimePicker1);
+            this.gunaShadowPanel1.Controls.Add(this.dateDebut);
             this.gunaShadowPanel1.Controls.Add(this.gunaSeparator1);
-            this.gunaShadowPanel1.Controls.Add(this.gunaDateTimePicker2);
+            this.gunaShadowPanel1.Controls.Add(this.dateFin);
             this.gunaShadowPanel1.Controls.Add(this.label3);
             this.gunaShadowPanel1.Controls.Add(this.label2);
             this.gunaShadowPanel1.Controls.Add(this.txtProjectName);
             this.gunaShadowPanel1.Controls.Add(this.label1);
-            this.gunaShadowPanel1.Location = new System.Drawing.Point(-18, 25);
+            this.gunaShadowPanel1.Location = new System.Drawing.Point(3, 52);
             this.gunaShadowPanel1.Name = "gunaShadowPanel1";
             this.gunaShadowPanel1.ShadowColor = System.Drawing.Color.Black;
-            this.gunaShadowPanel1.Size = new System.Drawing.Size(437, 394);
+            this.gunaShadowPanel1.Size = new System.Drawing.Size(442, 430);
             this.gunaShadowPanel1.TabIndex = 4;
+            // 
+            // lblProjectNumber
+            // 
+            this.lblProjectNumber.AutoSize = true;
+            this.lblProjectNumber.Location = new System.Drawing.Point(29, 38);
+            this.lblProjectNumber.Name = "lblProjectNumber";
+            this.lblProjectNumber.Size = new System.Drawing.Size(112, 21);
+            this.lblProjectNumber.TabIndex = 38;
+            this.lblProjectNumber.Text = "Nom du projet";
             // 
             // cmbTypeProject
             // 
@@ -867,8 +867,11 @@
             this.cmbTypeProject.FormattingEnabled = true;
             this.cmbTypeProject.HoverState.Parent = this.cmbTypeProject;
             this.cmbTypeProject.ItemHeight = 30;
+            this.cmbTypeProject.Items.AddRange(new object[] {
+            "Stratégique",
+            "Informatique"});
             this.cmbTypeProject.ItemsAppearance.Parent = this.cmbTypeProject;
-            this.cmbTypeProject.Location = new System.Drawing.Point(30, 196);
+            this.cmbTypeProject.Location = new System.Drawing.Point(30, 245);
             this.cmbTypeProject.Name = "cmbTypeProject";
             this.cmbTypeProject.ShadowDecoration.Parent = this.cmbTypeProject;
             this.cmbTypeProject.Size = new System.Drawing.Size(174, 36);
@@ -882,16 +885,18 @@
             this.btnCreate.BorderThickness = 1;
             this.btnCreate.CheckedState.Parent = this.btnCreate;
             this.btnCreate.CustomImages.Parent = this.btnCreate;
+            this.btnCreate.DisabledState.Parent = this.btnCreate;
             this.btnCreate.FillColor = System.Drawing.Color.ForestGreen;
             this.btnCreate.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnCreate.ForeColor = System.Drawing.Color.White;
             this.btnCreate.HoverState.Parent = this.btnCreate;
-            this.btnCreate.Location = new System.Drawing.Point(232, 327);
+            this.btnCreate.Location = new System.Drawing.Point(235, 376);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.ShadowDecoration.Parent = this.btnCreate;
             this.btnCreate.Size = new System.Drawing.Size(180, 45);
             this.btnCreate.TabIndex = 36;
             this.btnCreate.Text = "Créer le projet";
+            this.btnCreate.Click += new System.EventHandler(this.BtnCreate_Click);
             // 
             // btnafficher
             // 
@@ -901,11 +906,12 @@
             this.btnafficher.BorderThickness = 1;
             this.btnafficher.CheckedState.Parent = this.btnafficher;
             this.btnafficher.CustomImages.Parent = this.btnafficher;
+            this.btnafficher.DisabledState.Parent = this.btnafficher;
             this.btnafficher.FillColor = System.Drawing.Color.Transparent;
             this.btnafficher.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnafficher.ForeColor = System.Drawing.Color.Black;
             this.btnafficher.HoverState.Parent = this.btnafficher;
-            this.btnafficher.Location = new System.Drawing.Point(30, 327);
+            this.btnafficher.Location = new System.Drawing.Point(33, 376);
             this.btnafficher.Name = "btnafficher";
             this.btnafficher.ShadowDecoration.Parent = this.btnafficher;
             this.btnafficher.Size = new System.Drawing.Size(180, 45);
@@ -916,41 +922,41 @@
             // gunaSeparator4
             // 
             this.gunaSeparator4.LineColor = System.Drawing.Color.Silver;
-            this.gunaSeparator4.Location = new System.Drawing.Point(246, 225);
+            this.gunaSeparator4.Location = new System.Drawing.Point(246, 274);
             this.gunaSeparator4.Name = "gunaSeparator4";
             this.gunaSeparator4.Size = new System.Drawing.Size(176, 10);
             this.gunaSeparator4.TabIndex = 35;
             // 
-            // gunaComboBox2
+            // cmbCate
             // 
-            this.gunaComboBox2.BackColor = System.Drawing.Color.Transparent;
-            this.gunaComboBox2.BaseColor = System.Drawing.Color.White;
-            this.gunaComboBox2.BorderColor = System.Drawing.Color.Transparent;
-            this.gunaComboBox2.BorderSize = 0;
-            this.gunaComboBox2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.gunaComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.gunaComboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gunaComboBox2.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaComboBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaComboBox2.ForeColor = System.Drawing.Color.Black;
-            this.gunaComboBox2.FormattingEnabled = true;
-            this.gunaComboBox2.Items.AddRange(new object[] {
+            this.cmbCate.BackColor = System.Drawing.Color.Transparent;
+            this.cmbCate.BaseColor = System.Drawing.Color.White;
+            this.cmbCate.BorderColor = System.Drawing.Color.Transparent;
+            this.cmbCate.BorderSize = 0;
+            this.cmbCate.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbCate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbCate.FocusedColor = System.Drawing.Color.Empty;
+            this.cmbCate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCate.ForeColor = System.Drawing.Color.Black;
+            this.cmbCate.FormattingEnabled = true;
+            this.cmbCate.Items.AddRange(new object[] {
             "Departement",
             "Equipe",
             "Programme"});
-            this.gunaComboBox2.Location = new System.Drawing.Point(246, 203);
-            this.gunaComboBox2.MaxDropDownItems = 100;
-            this.gunaComboBox2.Name = "gunaComboBox2";
-            this.gunaComboBox2.OnHoverItemBaseColor = System.Drawing.Color.White;
-            this.gunaComboBox2.OnHoverItemForeColor = System.Drawing.Color.Black;
-            this.gunaComboBox2.Size = new System.Drawing.Size(176, 30);
-            this.gunaComboBox2.Sorted = true;
-            this.gunaComboBox2.TabIndex = 34;
+            this.cmbCate.Location = new System.Drawing.Point(246, 252);
+            this.cmbCate.MaxDropDownItems = 100;
+            this.cmbCate.Name = "cmbCate";
+            this.cmbCate.OnHoverItemBaseColor = System.Drawing.Color.White;
+            this.cmbCate.OnHoverItemForeColor = System.Drawing.Color.Black;
+            this.cmbCate.Size = new System.Drawing.Size(176, 30);
+            this.cmbCate.Sorted = true;
+            this.cmbCate.TabIndex = 34;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(239, 174);
+            this.label6.Location = new System.Drawing.Point(239, 223);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(77, 21);
             this.label6.TabIndex = 33;
@@ -959,7 +965,7 @@
             // gunaSeparator3
             // 
             this.gunaSeparator3.LineColor = System.Drawing.Color.Silver;
-            this.gunaSeparator3.Location = new System.Drawing.Point(28, 225);
+            this.gunaSeparator3.Location = new System.Drawing.Point(28, 274);
             this.gunaSeparator3.Name = "gunaSeparator3";
             this.gunaSeparator3.Size = new System.Drawing.Size(176, 10);
             this.gunaSeparator3.TabIndex = 32;
@@ -967,34 +973,34 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(26, 174);
+            this.label5.Location = new System.Drawing.Point(26, 223);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(108, 21);
             this.label5.TabIndex = 30;
             this.label5.Text = "Type de projet";
             // 
-            // gunaLineTextBox1
+            // txtDescrip
             // 
-            this.gunaLineTextBox1.BackColor = System.Drawing.Color.White;
-            this.gunaLineTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.gunaLineTextBox1.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(44)))), ((int)(((byte)(64)))));
-            this.gunaLineTextBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLineTextBox1.LineColor = System.Drawing.Color.Silver;
-            this.gunaLineTextBox1.LineSize = 2;
-            this.gunaLineTextBox1.Location = new System.Drawing.Point(28, 128);
-            this.gunaLineTextBox1.MaxLength = 1000;
-            this.gunaLineTextBox1.Name = "gunaLineTextBox1";
-            this.gunaLineTextBox1.PasswordChar = '\0';
-            this.gunaLineTextBox1.SelectedText = "";
-            this.gunaLineTextBox1.ShortcutsEnabled = false;
-            this.gunaLineTextBox1.Size = new System.Drawing.Size(399, 28);
-            this.gunaLineTextBox1.TabIndex = 29;
-            this.gunaLineTextBox1.TextOffsetX = 0;
+            this.txtDescrip.BackColor = System.Drawing.Color.White;
+            this.txtDescrip.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDescrip.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(44)))), ((int)(((byte)(64)))));
+            this.txtDescrip.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescrip.LineColor = System.Drawing.Color.Silver;
+            this.txtDescrip.LineSize = 2;
+            this.txtDescrip.Location = new System.Drawing.Point(28, 177);
+            this.txtDescrip.MaxLength = 1000;
+            this.txtDescrip.Name = "txtDescrip";
+            this.txtDescrip.PasswordChar = '\0';
+            this.txtDescrip.SelectedText = "";
+            this.txtDescrip.ShortcutsEnabled = false;
+            this.txtDescrip.Size = new System.Drawing.Size(399, 28);
+            this.txtDescrip.TabIndex = 29;
+            this.txtDescrip.TextOffsetX = 0;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(24, 104);
+            this.label4.Location = new System.Drawing.Point(24, 153);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(89, 21);
             this.label4.TabIndex = 28;
@@ -1003,67 +1009,67 @@
             // gunaSeparator2
             // 
             this.gunaSeparator2.LineColor = System.Drawing.Color.Silver;
-            this.gunaSeparator2.Location = new System.Drawing.Point(28, 311);
+            this.gunaSeparator2.Location = new System.Drawing.Point(28, 360);
             this.gunaSeparator2.Name = "gunaSeparator2";
             this.gunaSeparator2.Size = new System.Drawing.Size(176, 10);
             this.gunaSeparator2.TabIndex = 27;
             // 
-            // gunaDateTimePicker1
+            // dateDebut
             // 
-            this.gunaDateTimePicker1.BaseColor = System.Drawing.Color.White;
-            this.gunaDateTimePicker1.BorderColor = System.Drawing.Color.Transparent;
-            this.gunaDateTimePicker1.CustomFormat = null;
-            this.gunaDateTimePicker1.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.gunaDateTimePicker1.FocusedColor = System.Drawing.Color.White;
-            this.gunaDateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.gunaDateTimePicker1.ForeColor = System.Drawing.Color.DimGray;
-            this.gunaDateTimePicker1.Location = new System.Drawing.Point(20, 288);
-            this.gunaDateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.gunaDateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.gunaDateTimePicker1.Name = "gunaDateTimePicker1";
-            this.gunaDateTimePicker1.OnHoverBaseColor = System.Drawing.Color.White;
-            this.gunaDateTimePicker1.OnHoverBorderColor = System.Drawing.Color.White;
-            this.gunaDateTimePicker1.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaDateTimePicker1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaDateTimePicker1.Size = new System.Drawing.Size(184, 30);
-            this.gunaDateTimePicker1.TabIndex = 26;
-            this.gunaDateTimePicker1.Text = "mardi 1 juin 2021";
-            this.gunaDateTimePicker1.Value = new System.DateTime(2021, 6, 1, 15, 21, 9, 239);
+            this.dateDebut.BaseColor = System.Drawing.Color.White;
+            this.dateDebut.BorderColor = System.Drawing.Color.Transparent;
+            this.dateDebut.CustomFormat = null;
+            this.dateDebut.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.dateDebut.FocusedColor = System.Drawing.Color.White;
+            this.dateDebut.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.dateDebut.ForeColor = System.Drawing.Color.DimGray;
+            this.dateDebut.Location = new System.Drawing.Point(20, 337);
+            this.dateDebut.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dateDebut.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dateDebut.Name = "dateDebut";
+            this.dateDebut.OnHoverBaseColor = System.Drawing.Color.White;
+            this.dateDebut.OnHoverBorderColor = System.Drawing.Color.White;
+            this.dateDebut.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dateDebut.OnPressedColor = System.Drawing.Color.Black;
+            this.dateDebut.Size = new System.Drawing.Size(184, 30);
+            this.dateDebut.TabIndex = 26;
+            this.dateDebut.Text = "mardi 1 juin 2021";
+            this.dateDebut.Value = new System.DateTime(2021, 6, 1, 15, 21, 9, 239);
             // 
             // gunaSeparator1
             // 
             this.gunaSeparator1.LineColor = System.Drawing.Color.Silver;
-            this.gunaSeparator1.Location = new System.Drawing.Point(251, 312);
+            this.gunaSeparator1.Location = new System.Drawing.Point(251, 361);
             this.gunaSeparator1.Name = "gunaSeparator1";
             this.gunaSeparator1.Size = new System.Drawing.Size(176, 10);
             this.gunaSeparator1.TabIndex = 25;
             // 
-            // gunaDateTimePicker2
+            // dateFin
             // 
-            this.gunaDateTimePicker2.BaseColor = System.Drawing.Color.White;
-            this.gunaDateTimePicker2.BorderColor = System.Drawing.Color.Transparent;
-            this.gunaDateTimePicker2.CustomFormat = null;
-            this.gunaDateTimePicker2.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.gunaDateTimePicker2.FocusedColor = System.Drawing.Color.White;
-            this.gunaDateTimePicker2.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.gunaDateTimePicker2.ForeColor = System.Drawing.Color.Black;
-            this.gunaDateTimePicker2.Location = new System.Drawing.Point(243, 289);
-            this.gunaDateTimePicker2.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.gunaDateTimePicker2.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.gunaDateTimePicker2.Name = "gunaDateTimePicker2";
-            this.gunaDateTimePicker2.OnHoverBaseColor = System.Drawing.Color.White;
-            this.gunaDateTimePicker2.OnHoverBorderColor = System.Drawing.Color.White;
-            this.gunaDateTimePicker2.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaDateTimePicker2.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaDateTimePicker2.Size = new System.Drawing.Size(184, 30);
-            this.gunaDateTimePicker2.TabIndex = 24;
-            this.gunaDateTimePicker2.Text = "mardi 1 juin 2021";
-            this.gunaDateTimePicker2.Value = new System.DateTime(2021, 6, 1, 15, 21, 9, 239);
+            this.dateFin.BaseColor = System.Drawing.Color.White;
+            this.dateFin.BorderColor = System.Drawing.Color.Transparent;
+            this.dateFin.CustomFormat = null;
+            this.dateFin.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.dateFin.FocusedColor = System.Drawing.Color.White;
+            this.dateFin.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.dateFin.ForeColor = System.Drawing.Color.Black;
+            this.dateFin.Location = new System.Drawing.Point(243, 338);
+            this.dateFin.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dateFin.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dateFin.Name = "dateFin";
+            this.dateFin.OnHoverBaseColor = System.Drawing.Color.White;
+            this.dateFin.OnHoverBorderColor = System.Drawing.Color.White;
+            this.dateFin.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dateFin.OnPressedColor = System.Drawing.Color.Black;
+            this.dateFin.Size = new System.Drawing.Size(184, 30);
+            this.dateFin.TabIndex = 24;
+            this.dateFin.Text = "mardi 1 juin 2021";
+            this.dateFin.Value = new System.DateTime(2021, 6, 1, 15, 21, 9, 239);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(251, 267);
+            this.label3.Location = new System.Drawing.Point(251, 316);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(85, 21);
             this.label3.TabIndex = 23;
@@ -1072,7 +1078,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(26, 267);
+            this.label2.Location = new System.Drawing.Point(26, 316);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(107, 21);
             this.label2.TabIndex = 22;
@@ -1086,7 +1092,7 @@
             this.txtProjectName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProjectName.LineColor = System.Drawing.Color.Silver;
             this.txtProjectName.LineSize = 2;
-            this.txtProjectName.Location = new System.Drawing.Point(30, 62);
+            this.txtProjectName.Location = new System.Drawing.Point(30, 111);
             this.txtProjectName.MaxLength = 1000;
             this.txtProjectName.Name = "txtProjectName";
             this.txtProjectName.PasswordChar = '\0';
@@ -1099,7 +1105,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(26, 38);
+            this.label1.Location = new System.Drawing.Point(26, 87);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(112, 21);
             this.label1.TabIndex = 20;
@@ -1126,6 +1132,7 @@
             this.guna2Button1.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
             this.guna2Button1.CheckedState.Parent = this.guna2Button1;
             this.guna2Button1.CustomImages.Parent = this.guna2Button1;
+            this.guna2Button1.DisabledState.Parent = this.guna2Button1;
             this.guna2Button1.Enabled = false;
             this.guna2Button1.FillColor = System.Drawing.Color.Transparent;
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 12F);
@@ -1437,6 +1444,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddProject";
             this.Text = "Project Portfolio";
+            this.Load += new System.EventHandler(this.AddProject_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabProjetPan.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
@@ -1494,29 +1502,29 @@
         private Guna.UI.WinForms.GunaComboBox gunaComboBox6;
         private System.Windows.Forms.Label label12;
         private Guna.UI.WinForms.GunaSeparator gunaSeparator7;
-        private Guna.UI.WinForms.GunaComboBox gunaComboBox5;
+        private Guna.UI.WinForms.GunaComboBox cmbStatut;
         private Guna.UI.WinForms.GunaSeparator gunaSeparator6;
-        private Guna.UI.WinForms.GunaComboBox gunaComboBox4;
+        private Guna.UI.WinForms.GunaComboBox cmbEtat;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
-        private Guna.UI.WinForms.GunaLineTextBox gunaLineTextBox2;
+        private Guna.UI.WinForms.GunaLineTextBox txtCout;
         private Guna.UI.WinForms.GunaSeparator gunaSeparator5;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
-        private Guna.UI.WinForms.GunaComboBox gunaComboBox3;
+        private Guna.UI.WinForms.GunaComboBox cmdChef;
         private System.Windows.Forms.Label label8;
         private Guna.UI.WinForms.GunaShadowPanel gunaShadowPanel1;
         private Guna.UI.WinForms.GunaSeparator gunaSeparator4;
-        private Guna.UI.WinForms.GunaComboBox gunaComboBox2;
+        private Guna.UI.WinForms.GunaComboBox cmbCate;
         private System.Windows.Forms.Label label6;
         private Guna.UI.WinForms.GunaSeparator gunaSeparator3;
         private System.Windows.Forms.Label label5;
-        private Guna.UI.WinForms.GunaLineTextBox gunaLineTextBox1;
+        private Guna.UI.WinForms.GunaLineTextBox txtDescrip;
         private System.Windows.Forms.Label label4;
         private Guna.UI.WinForms.GunaSeparator gunaSeparator2;
-        private Guna.UI.WinForms.GunaDateTimePicker gunaDateTimePicker1;
+        private Guna.UI.WinForms.GunaDateTimePicker dateDebut;
         private Guna.UI.WinForms.GunaSeparator gunaSeparator1;
-        private Guna.UI.WinForms.GunaDateTimePicker gunaDateTimePicker2;
+        private Guna.UI.WinForms.GunaDateTimePicker dateFin;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private Guna.UI.WinForms.GunaLineTextBox txtProjectName;
@@ -1574,7 +1582,6 @@
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Panel panel9;
         private Bunifu.Framework.UI.BunifuGauge bunifuGauge1;
-        private Bunifu.Framework.UI.BunifuDropdown cmbSelectProjet;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label label34;
@@ -1584,5 +1591,7 @@
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label lblProjectNumber;
+        private Bunifu.Framework.UI.BunifuDropdown cmbSelectProjet;
     }
 }

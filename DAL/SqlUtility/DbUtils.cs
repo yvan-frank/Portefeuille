@@ -1,7 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 namespace DAL.SqlUtility
 {
-    public class DbUtils
+    public abstract class DbUtils
     {
         //private string  Host = "127.0.0.1";
         //private int Port = 3306;

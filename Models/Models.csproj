@@ -49,6 +49,7 @@
     <Compile Include="ResourceModel.cs" />
     <Compile Include="RuleModel.cs" />
     <Compile Include="ScenarioModel.cs" />
+    <Compile Include="StatusAndStateProjectModel.cs" />
     <Compile Include="UserModel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
