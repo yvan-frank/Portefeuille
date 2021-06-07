@@ -38,10 +38,10 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.guna2ShadowPanel4 = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblTasks = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.guna2ShadowPanel3 = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblTotal = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.guna2ShadowPanel2 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -141,7 +141,7 @@
             // 
             this.guna2ShadowPanel4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.guna2ShadowPanel4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ShadowPanel4.Controls.Add(this.label7);
+            this.guna2ShadowPanel4.Controls.Add(this.lblTasks);
             this.guna2ShadowPanel4.Controls.Add(this.label8);
             this.guna2ShadowPanel4.FillColor = System.Drawing.Color.White;
             this.guna2ShadowPanel4.Location = new System.Drawing.Point(318, 215);
@@ -151,16 +151,16 @@
             this.guna2ShadowPanel4.Size = new System.Drawing.Size(250, 169);
             this.guna2ShadowPanel4.TabIndex = 3;
             // 
-            // label7
+            // lblTasks
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 35F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(231)))), ((int)(((byte)(235)))));
-            this.label7.Location = new System.Drawing.Point(85, 56);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(79, 62);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "30";
+            this.lblTasks.AutoSize = true;
+            this.lblTasks.Font = new System.Drawing.Font("Segoe UI Semibold", 35F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTasks.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(231)))), ((int)(((byte)(235)))));
+            this.lblTasks.Location = new System.Drawing.Point(85, 56);
+            this.lblTasks.Name = "lblTasks";
+            this.lblTasks.Size = new System.Drawing.Size(79, 62);
+            this.lblTasks.TabIndex = 2;
+            this.lblTasks.Text = "30";
             // 
             // label8
             // 
@@ -176,7 +176,7 @@
             // 
             this.guna2ShadowPanel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.guna2ShadowPanel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ShadowPanel3.Controls.Add(this.label4);
+            this.guna2ShadowPanel3.Controls.Add(this.lblTotal);
             this.guna2ShadowPanel3.Controls.Add(this.label6);
             this.guna2ShadowPanel3.FillColor = System.Drawing.Color.White;
             this.guna2ShadowPanel3.Location = new System.Drawing.Point(20, 215);
@@ -186,16 +186,16 @@
             this.guna2ShadowPanel3.Size = new System.Drawing.Size(250, 169);
             this.guna2ShadowPanel3.TabIndex = 3;
             // 
-            // label4
+            // lblTotal
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(231)))), ((int)(((byte)(235)))));
-            this.label4.Location = new System.Drawing.Point(63, 70);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(133, 28);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "FCFA 600.000";
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(231)))), ((int)(((byte)(235)))));
+            this.lblTotal.Location = new System.Drawing.Point(63, 70);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(133, 28);
+            this.lblTotal.TabIndex = 2;
+            this.lblTotal.Text = "FCFA 600.000";
             // 
             // label6
             // 
@@ -339,10 +339,10 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel4;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblTasks;
         private System.Windows.Forms.Label label8;
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label label6;
     }
 }

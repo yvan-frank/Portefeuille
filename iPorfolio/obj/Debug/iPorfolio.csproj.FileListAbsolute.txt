@@ -26,7 +26,6 @@ E:\PROJECT\Portfolio\iPorfolio\bin\Debug\LiveCharts.Wpf.xml
 E:\PROJECT\Portfolio\iPorfolio\bin\Debug\DAL.pdb
 E:\PROJECT\Portfolio\iPorfolio\obj\Debug\iPorfolio.csprojAssemblyReference.cache
 E:\PROJECT\Portfolio\iPorfolio\obj\Debug\iPorfolio.Properties.Resources.resources
-E:\PROJECT\Portfolio\iPorfolio\obj\Debug\iPorfolio.Views.Home.AddProject.resources
 E:\PROJECT\Portfolio\iPorfolio\obj\Debug\iPorfolio.Views.Home.DashboardForm.resources
 E:\PROJECT\Portfolio\iPorfolio\obj\Debug\iPorfolio.Views.Home.HomeForm.resources
 E:\PROJECT\Portfolio\iPorfolio\obj\Debug\iPorfolio.Views.Home.TestForm.resources
@@ -36,3 +35,4 @@ E:\PROJECT\Portfolio\iPorfolio\obj\Debug\iPorfolio.csproj.CoreCompileInputs.cach
 E:\PROJECT\Portfolio\iPorfolio\obj\Debug\iPorfolio.csproj.CopyComplete
 E:\PROJECT\Portfolio\iPorfolio\obj\Debug\iPorfolio.exe
 E:\PROJECT\Portfolio\iPorfolio\obj\Debug\iPorfolio.pdb
+E:\PROJECT\Portfolio\iPorfolio\obj\Debug\iPorfolio.Views.Home.ProjectManagement.resources

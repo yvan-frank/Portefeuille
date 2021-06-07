@@ -28,6 +28,25 @@ namespace DAL
             return result;
         }
 
+        public List<ProjectModel> GetListByNumero(string numeroProject)
+        {
+            List<ProjectModel> result = new List<ProjectModel>();
+            string sql = "select * from projet where numero = @Numero";
+            MySqlParameter[] parameters =
+            {
+                new MySqlParameter("@Numero", MySqlDbType.VarChar)
+            };
+            parameters[0].Value = numeroProject;
+            DataSet ds = DatabaseHelper.Query(sql, parameters);
+            if (ds.Tables.Count == 0 || ds.Tables[0].Rows.Count == 0) return result;
+            foreach (DataRow row in ds.Tables[0].Rows)
+            {
+                result.Add(DataRowToModel(row));
+            }
+
+            return result;
+        }
+
         public List<StatusAndStateProjectModel> GetStatus()
         {
             List<StatusAndStateProjectModel> result = new List<StatusAndStateProjectModel>();
@@ -70,7 +89,7 @@ namespace DAL
         public int Insert(ProjectModel model)
         {
             string sql =
-                "INSERT INTO projet (numero,nom,decription,type,category,dateDebut,dateFin,cout,etat,status,internaBudget,externaBudget,returnOfInvest,closeDate,estimateDate,donePercent,chefProjet,planGoToLive,dueDate,CreateTime) VALUES(@numero,@nom,@decription,@type,@category,@dateDebut,@dateFin,@cout,@etat,@status,@internaBudget,@externaBudget,@returnOfInvest,@closeDate,@estimateDate,@donePercent,@chefProjet,@planGoToLive,@dueDate,@CreateTime)";
+                "INSERT INTO projet (numero,nom,decription,type,category,dateDebut,dateFin,cout,etat,status,internaBudget,externaBudget,returnOfInvest,closeDate,estimateDate,donePercent,pm,planGoToLive,dueDate) VALUES(@numero,@nom,@decription,@type,@category,@dateDebut,@dateFin,@cout,@etat,@status,@internaBudget,@externaBudget,@returnOfInvest,@closeDate,@estimateDate,@donePercent,@pm,@planGoToLive,@dueDate)";
           
             MySqlParameter[] parameters =
             {
@@ -90,10 +109,9 @@ namespace DAL
                 new MySqlParameter("@closeDate", MySqlDbType.Date),
                 new MySqlParameter("@estimateDate", MySqlDbType.Date),
                 new MySqlParameter("@donePercent", MySqlDbType.Int32),
-                new MySqlParameter("@chefProjet", MySqlDbType.VarChar),
+                new MySqlParameter("@pm", MySqlDbType.Int32),
                 new MySqlParameter("@planGoToLive", MySqlDbType.Date),
-                new MySqlParameter("@dueDate", MySqlDbType.Date),
-                new MySqlParameter("@CreateTime", MySqlDbType.Date)
+                new MySqlParameter("@dueDate", MySqlDbType.Date)
 
             };
 
@@ -113,10 +131,9 @@ namespace DAL
             parameters[13].Value = model.CloseDate == null ? (object)DBNull.Value : model.CloseDate;
             parameters[14].Value = model.EstimatedDate == null ? (object)DBNull.Value : model.EstimatedDate;
             parameters[15].Value = model.DonePercent == null ? (object)DBNull.Value : model.DonePercent;
-            parameters[16].Value = model.ChefProject == null ? (object)DBNull.Value : model.ChefProject;
+            parameters[16].Value = model.FunctionName == null ? (object)DBNull.Value : model.FunctionName;
             parameters[17].Value = model.PlanGotoLive == null ? (object)DBNull.Value : model.PlanGotoLive;
             parameters[18].Value = model.DueDate == null ? (object)DBNull.Value : model.DueDate;
-            parameters[19].Value = model.CreateTime == null ? (object)DBNull.Value : model.CreateTime;
 
 
 
@@ -129,11 +146,11 @@ namespace DAL
         public int Update(ProjectModel model)
         {
             string sql =
-                "UPDATE projet SET numero=@numero,nom=@nom,decription=@decription,type=@type,category=@category,dateDebut=@dateDebut,dateFin=@dateFin,cout=@cout,etat=@etat,status=@status,internaBudget=@internaBudget,externaBudget=@externaBudget,returnOfInvest=@returnOfInvest,closeDate=@closeDate,estimateDate=@estimateDate,donePercent=@donePercent,chefProjet=@chefProjet, planGoToLive=@planGoToLive,dueDate=@dueDate,CreateTime=@CreateTime WHERE id=@ProjectId";
+                "UPDATE projet SET nom=@nom,decription=@decription,type=@type,category=@category,dateDebut=@dateDebut,dateFin=@dateFin,cout=@cout,etat=@etat,status=@status,internaBudget=@internaBudget,externaBudget=@externaBudget,returnOfInvest=@returnOfInvest,closeDate=@closeDate,estimateDate=@estimateDate,donePercent=@donePercent,pm=@pm, planGoToLive=@planGoToLive,dueDate=@dueDate WHERE id=@ProjectId";
 
             MySqlParameter[] parameters =
            {
-                new MySqlParameter("@ProjectId", MySqlDbType.Int32),
+               
                 new MySqlParameter("@numero", MySqlDbType.String),
                 new MySqlParameter("@nom", MySqlDbType.VarChar),
                 new MySqlParameter("@decription", MySqlDbType.Text),
@@ -150,31 +167,30 @@ namespace DAL
                 new MySqlParameter("@closeDate", MySqlDbType.Date),
                 new MySqlParameter("@estimateDate", MySqlDbType.Date),
                 new MySqlParameter("@donePercent", MySqlDbType.Int32),
-                new MySqlParameter("@chefProjet", MySqlDbType.VarChar),
+                new MySqlParameter("@pm", MySqlDbType.Int32),
                 new MySqlParameter("@planGoToLive", MySqlDbType.Date),
-                new MySqlParameter("@dueDate", MySqlDbType.Date),
-                new MySqlParameter("@CreateTime", MySqlDbType.Date),
-            };
+                new MySqlParameter("@dueDate", MySqlDbType.Date)
+           };
 
-            parameters[0].Value = model.ProjectId;
-            parameters[1].Value = model.NumberProject == null ? (object)DBNull.Value : model.NumberProject;
-            parameters[2].Value = model.ProjectName == null ? (object)DBNull.Value : model.ProjectName;
-            parameters[3].Value = model.Description == null ? (object)DBNull.Value : model.Description;
-            parameters[4].Value = model.ProjectType == null ? (object)DBNull.Value : model.ProjectType;
-            parameters[5].Value = model.Category == null ? (object)DBNull.Value : model.Category;
-            parameters[6].Value = model.DateDebut == null ? (object)DBNull.Value : model.DateDebut;
-            parameters[7].Value = model.DateFin == null ? (object)DBNull.Value : model.DateFin;
-            parameters[8].Value = model.Cost == null ? (object)DBNull.Value : model.Cost;
-            parameters[9].Value = model.State == null ? (object)DBNull.Value : model.State;
-            parameters[10].Value = model.Status == null ? (object)DBNull.Value : model.Status;
-            parameters[11].Value = model.InternalBudget == null ? (object)DBNull.Value : model.InternalBudget;
-            parameters[12].Value = model.ExternalBudget == null ? (object)DBNull.Value : model.ExternalBudget;
-            parameters[13].Value = model.ReturnOfInvestment == null ? (object)DBNull.Value : model.CloseDate;
-            parameters[14].Value = model.CloseDate == null ? (object)DBNull.Value : model.Description;
-            parameters[15].Value = model.EstimatedDate == null ? (object)DBNull.Value : model.EstimatedDate;
-            parameters[16].Value = model.DonePercent == null ? (object)DBNull.Value : model.DonePercent;
-            parameters[17].Value = model.ChefProject == null ? (object)DBNull.Value : model.ChefProject;
-            parameters[18].Value = model.PlanGotoLive == null ? (object)DBNull.Value : model.PlanGotoLive;
+            parameters[0].Value = model.NumberProject;
+            parameters[1].Value = model.ProjectName == null ? (object)DBNull.Value : model.ProjectName;
+            parameters[2].Value = model.Description == null ? (object)DBNull.Value : model.Description;
+            parameters[3].Value = model.ProjectType == null ? (object)DBNull.Value : model.ProjectType;
+            parameters[4].Value = model.Category == null ? (object)DBNull.Value : model.Category;
+            parameters[5].Value = model.DateDebut == null ? (object)DBNull.Value : model.DateDebut;
+            parameters[6].Value = model.DateFin == null ? (object)DBNull.Value : model.DateFin;
+            parameters[7].Value = model.Cost == null ? (object)DBNull.Value : model.Cost;
+            parameters[8].Value = model.State == null ? (object)DBNull.Value : model.State;
+            parameters[9].Value = model.Status == null ? (object)DBNull.Value : model.Status;
+            parameters[10].Value = model.InternalBudget == null ? (object)DBNull.Value : model.InternalBudget;
+            parameters[11].Value = model.ExternalBudget == null ? (object)DBNull.Value : model.ExternalBudget;
+            parameters[12].Value = model.ReturnOfInvestment == null ? (object)DBNull.Value : model.CloseDate;
+            parameters[13].Value = model.CloseDate == null ? (object)DBNull.Value : model.Description;
+            parameters[14].Value = model.EstimatedDate == null ? (object)DBNull.Value : model.EstimatedDate;
+            parameters[15].Value = model.DonePercent == null ? (object)DBNull.Value : model.DonePercent;
+            parameters[16].Value = model.FunctionName == null ? (object)DBNull.Value : model.FunctionName;
+            parameters[17].Value = model.PlanGotoLive == null ? (object)DBNull.Value : model.PlanGotoLive;
+            parameters[18].Value = model.DueDate == null ? (object)DBNull.Value : model.DueDate;
 
 
             return DatabaseHelper.ExecuteSql(sql, parameters);
@@ -186,32 +202,25 @@ namespace DAL
             string numberProject = "";
             string name = "";
 
-            try
+            MySqlDataReader reader = DatabaseHelper.ExecuteDataReader(sql);
+            while (reader.Read())
             {
-                MySqlDataReader reader = DatabaseHelper.ExecuteDataReader(sql);
-                while (reader.Read())
+                if (reader.HasRows)
                 {
-                    if (reader.HasRows)
-                    {
-                        numberProject = reader.GetString(1);
-                        name = reader.GetString(2);
-                    }
-
-
+                    numberProject = reader.GetString(0);
+                    name = reader.GetString(1);
                 }
-                return numberProject == model.NumberProject || name == model.ProjectName;
+
+
             }
-            catch (MySqlException e)
-            {
-                throw e;
-            }
+            return numberProject == model.NumberProject || name == model.ProjectName;
         }
 
 
         //number project management
         public string GenerateProjectNumber()
         {
-            ProjectModel model = new ProjectModel();
+            //ProjectModel model = new ProjectModel();
             string sql = "select * from projet";
             string numero = String.Empty;
             try
@@ -222,23 +231,25 @@ namespace DAL
                 {
                     if (reader.HasRows)
                     {
-                        numero = reader.GetString(1);
+                        numero = reader.GetString(0);
                     }
                 }
 
                 return numero;
             }
-            catch (MySqlException e)
+            catch 
             {
                 return numero;
             }
         }
-        public ProjectModel GetModel(int projectId)
+
+
+        public ProjectModel GetModel(string projectId)
         {
-            string sql = "select * from projet where id = @ProjectId";
+            string sql = "select * from projet where numero = @numero";
             MySqlParameter[] parameters =
             {
-                new MySqlParameter("@ProjectId", MySqlDbType.Int32)
+                new MySqlParameter("@numero", MySqlDbType.VarChar)
             };
             parameters[0].Value = projectId;
 
@@ -251,6 +262,8 @@ namespace DAL
             return DataRowToModel(ds.Tables[0].Rows[0]);
         }
 
+
+
         //get count project
         public int CountProject()
         {
@@ -261,7 +274,20 @@ namespace DAL
             return val;
         }
 
-        
+        public int GetCountCost()
+        {
+            string sql = "select sum(cout) from projet";
+            int cout = DatabaseHelper.ExecuteSqlCount(sql);
+
+            if (cout != 0)
+            {
+                return cout;
+            }
+            else
+            {
+                return 0;
+            }
+        }
 
         private ProjectModel DataRowToModel(DataRow row)
         {
@@ -269,10 +295,6 @@ namespace DAL
 
             if (row == null) return project;
 
-            if (row["id"] != null && row["id"].ToString() != String.Empty)
-            {
-                project.ProjectId = int.Parse(row["id"].ToString());
-            }
             if (row["numero"] != null && row["numero"].ToString() != String.Empty)
             {
                 project.NumberProject = row["numero"].ToString();
@@ -284,10 +306,6 @@ namespace DAL
             if (row["decription"] != null && row["decription"].ToString() != String.Empty)
             {
                 project.Description = row["decription"].ToString();
-            }
-            if (row["chefProjet"] != null && row["chefProjet"].ToString() != String.Empty)
-            {
-                project.ChefProject = row["chefProjet"].ToString();
             }
             if (row["type"] != null && row["type"].ToString() != String.Empty)
             {
@@ -323,7 +341,7 @@ namespace DAL
             }
             if (row["externaBudget"] != null && row["externaBudget"].ToString() != String.Empty)
             {
-                project.ExternalBudget = decimal.Parse(row["externalBudget"].ToString());
+                project.ExternalBudget = decimal.Parse(row["externaBudget"].ToString());
             }
             if (row["returnOfInvest"] != null && row["returnOfInvest"].ToString() != String.Empty)
             {
@@ -341,12 +359,29 @@ namespace DAL
             {
                 project.DonePercent = int.Parse(row["donePercent"].ToString());
             }
+
+            if (row["pm"] != null && row["pm"].ToString() != String.Empty)
+            {
+                project.FunctionName = int.Parse(row["pm"].ToString());
+            }
+            
             if (row["planGoToLive"] != null && row["planGoToLive"].ToString() != String.Empty)
             {
                 project.PlanGotoLive = DateTime.Parse(row["planGoToLive"].ToString());
             }
+            if (row["dueDate"] != null && row["dueDate"].ToString() != String.Empty)
+            {
+                project.DueDate = DateTime.Parse(row["dueDate"].ToString());
+            }
+            if (row["CreateTime"] != null && row["CreateTime"].ToString() != String.Empty)
+            {
+                project.CreateTime = DateTime.Parse(row["CreateTime"].ToString());
+            }
+            
             return project;
         }
+
+        
 
         private StatusAndStateProjectModel DataRowStatus(DataRow row)
         {

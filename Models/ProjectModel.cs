@@ -4,7 +4,6 @@ namespace Models
 {
     public class ProjectModel
     {
-        public int ProjectId { get; set; } 
         public string NumberProject { get; set; }
         public  string ProjectName { get; set; }
         public string Description { get; set; }
@@ -16,7 +15,7 @@ namespace Models
         public DateTime? PlanGotoLive { get; set; }
         public DateTime? DueDate { get; set; }
         public DateTime? CreateTime { get; set; }
-        public string ChefProject { get; set; }
+        public int? FunctionName { get; set; }
         public int? Cost { get; set; }
         public int? State { get; set; }
         public int? Status { get; set; }
@@ -35,5 +34,6 @@ namespace Models
         {
             this.NumberProject = numberProject;
         }
+
     }
 }

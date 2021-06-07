@@ -45,6 +45,7 @@
     <Compile Include="Evaluation.cs" />
     <Compile Include="PonderationModel.cs" />
     <Compile Include="ProjectModel.cs" />
+    <Compile Include="ProjectPropertyModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResourceModel.cs" />
     <Compile Include="RuleModel.cs" />

@@ -22,9 +22,19 @@ namespace Controllers
             return dal.GetState();
         }
 
+        public List<ProjectModel> GetListByNumero(string numero)
+        {
+            return dal.GetListByNumero(numero);
+        }
+
         public int CountProject()
         {
             return dal.CountProject();
+        }
+
+        public int GetCostProject()
+        {
+            return dal.GetCountCost();
         }
 
         public int Insert(ProjectModel model)
@@ -47,7 +57,7 @@ namespace Controllers
             return dal.Update(model);
         }
 
-        public ProjectModel GetModel(int projectId)
+        public ProjectModel GetModel(string projectId)
         {
             return dal.GetModel(projectId);
         }

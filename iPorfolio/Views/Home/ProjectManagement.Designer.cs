@@ -1,6 +1,6 @@
 ﻿namespace iPorfolio.Views.Home
 {
-    partial class AddProject
+    partial class ProjectManagement
     {
         /// <summary>
         /// Required designer variable.
@@ -29,16 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddProject));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProjectManagement));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabProjetPan = new System.Windows.Forms.TabPage();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.label35 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.lblNomChefProjet = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
+            this.lblDateFin = new System.Windows.Forms.Label();
+            this.lblDateDebut = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
@@ -59,7 +58,7 @@
             this.label24 = new System.Windows.Forms.Label();
             this.guna2ShadowPanel5 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.guna2ShadowPanel6 = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.label25 = new System.Windows.Forms.Label();
+            this.lblCout = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.guna2ShadowPanel7 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.label27 = new System.Windows.Forms.Label();
@@ -130,6 +129,7 @@
             this.gunaSeparator9 = new Guna.UI.WinForms.GunaSeparator();
             this.gunaComboBox7 = new Guna.UI.WinForms.GunaComboBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.lblStatus = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabProjetPan.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -201,11 +201,11 @@
             // 
             // panel10
             // 
-            this.panel10.Controls.Add(this.label35);
+            this.panel10.Controls.Add(this.lblStatus);
             this.panel10.Controls.Add(this.label34);
             this.panel10.Controls.Add(this.lblNomChefProjet);
-            this.panel10.Controls.Add(this.label32);
-            this.panel10.Controls.Add(this.label31);
+            this.panel10.Controls.Add(this.lblDateFin);
+            this.panel10.Controls.Add(this.lblDateDebut);
             this.panel10.Controls.Add(this.label30);
             this.panel10.Controls.Add(this.label29);
             this.panel10.Controls.Add(this.label28);
@@ -214,20 +214,11 @@
             this.panel10.Size = new System.Drawing.Size(515, 67);
             this.panel10.TabIndex = 1;
             // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(302, 44);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(114, 21);
-            this.label35.TabIndex = 10;
-            this.label35.Text = "En progression";
-            // 
             // label34
             // 
             this.label34.AutoSize = true;
             this.label34.ForeColor = System.Drawing.Color.Navy;
-            this.label34.Location = new System.Drawing.Point(237, 44);
+            this.label34.Location = new System.Drawing.Point(237, 42);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(50, 21);
             this.label34.TabIndex = 9;
@@ -242,23 +233,23 @@
             this.lblNomChefProjet.TabIndex = 8;
             this.lblNomChefProjet.Text = "Luna Lovan";
             // 
-            // label32
+            // lblDateFin
             // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(296, 5);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(145, 21);
-            this.label32.TabIndex = 7;
-            this.label32.Text = "Lundi 20 avril 2021";
+            this.lblDateFin.AutoSize = true;
+            this.lblDateFin.Location = new System.Drawing.Point(296, 5);
+            this.lblDateFin.Name = "lblDateFin";
+            this.lblDateFin.Size = new System.Drawing.Size(145, 21);
+            this.lblDateFin.TabIndex = 7;
+            this.lblDateFin.Text = "Lundi 20 avril 2021";
             // 
-            // label31
+            // lblDateDebut
             // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(76, 5);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(145, 21);
-            this.label31.TabIndex = 6;
-            this.label31.Text = "Lundi 20 avril 2021";
+            this.lblDateDebut.AutoSize = true;
+            this.lblDateDebut.Location = new System.Drawing.Point(76, 5);
+            this.lblDateDebut.Name = "lblDateDebut";
+            this.lblDateDebut.Size = new System.Drawing.Size(145, 21);
+            this.lblDateDebut.TabIndex = 6;
+            this.lblDateDebut.Text = "Lundi 20 avril 2021";
             // 
             // label30
             // 
@@ -312,6 +303,7 @@
             this.cmbSelectProjet.selectedIndex = -1;
             this.cmbSelectProjet.Size = new System.Drawing.Size(455, 60);
             this.cmbSelectProjet.TabIndex = 0;
+            this.cmbSelectProjet.onItemSelected += new System.EventHandler(this.CmbSelectProjet_onItemSelected);
             // 
             // guna2GradientButton1
             // 
@@ -484,7 +476,7 @@
             // guna2ShadowPanel6
             // 
             this.guna2ShadowPanel6.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ShadowPanel6.Controls.Add(this.label25);
+            this.guna2ShadowPanel6.Controls.Add(this.lblCout);
             this.guna2ShadowPanel6.Controls.Add(this.label21);
             this.guna2ShadowPanel6.FillColor = System.Drawing.Color.White;
             this.guna2ShadowPanel6.Location = new System.Drawing.Point(249, 177);
@@ -493,15 +485,15 @@
             this.guna2ShadowPanel6.Size = new System.Drawing.Size(240, 119);
             this.guna2ShadowPanel6.TabIndex = 4;
             // 
-            // label25
+            // lblCout
             // 
-            this.label25.AutoSize = true;
-            this.label25.ForeColor = System.Drawing.Color.Navy;
-            this.label25.Location = new System.Drawing.Point(57, 49);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(97, 21);
-            this.label25.TabIndex = 2;
-            this.label25.Text = "FCFA 25.000";
+            this.lblCout.AutoSize = true;
+            this.lblCout.ForeColor = System.Drawing.Color.Navy;
+            this.lblCout.Location = new System.Drawing.Point(57, 49);
+            this.lblCout.Name = "lblCout";
+            this.lblCout.Size = new System.Drawing.Size(97, 21);
+            this.lblCout.TabIndex = 2;
+            this.lblCout.Text = "FCFA 25.000";
             // 
             // label21
             // 
@@ -1434,7 +1426,16 @@
             this.imageList1.Images.SetKeyName(0, "icons8_send_hot_list_48.png");
             this.imageList1.Images.SetKeyName(1, "icons8_settings_3_filled.ico");
             // 
-            // AddProject
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Location = new System.Drawing.Point(296, 42);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(145, 21);
+            this.lblStatus.TabIndex = 11;
+            this.lblStatus.Text = "Lundi 20 avril 2021";
+            // 
+            // ProjectManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1442,7 +1443,7 @@
             this.ControlBox = false;
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "AddProject";
+            this.Name = "ProjectManagement";
             this.Text = "Project Portfolio";
             this.Load += new System.EventHandler(this.AddProject_Load);
             this.tabControl1.ResumeLayout(false);
@@ -1577,21 +1578,21 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label lblTasks;
-        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label lblCout;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Panel panel9;
         private Bunifu.Framework.UI.BunifuGauge bunifuGauge1;
         private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Label lblNomChefProjet;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label lblDateFin;
+        private System.Windows.Forms.Label lblDateDebut;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label lblProjectNumber;
         private Bunifu.Framework.UI.BunifuDropdown cmbSelectProjet;
+        private System.Windows.Forms.Label lblStatus;
     }
 }

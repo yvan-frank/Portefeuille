@@ -22,6 +22,8 @@ namespace iPorfolio.Views.Home
             chart1.Legends[0].Enabled = true;
             //chart1.ChartAreas[0].Area3DStyle.Enable3D = true;
             lblCountProject.Text = _project.CountProject().ToString();
+
+            lblTotal.Text = @"FCFA "+_project.GetCostProject();
         }
     }
 }

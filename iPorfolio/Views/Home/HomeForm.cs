@@ -40,7 +40,7 @@ namespace iPorfolio.Views.Home
 
         private void BtnProjet_Click(object sender, System.EventArgs e)
         {
-            OnChildForm(new AddProject());
+            OnChildForm(new ProjectManagement());
         }
 
         private void BtnDashboard_Click(object sender, System.EventArgs e)
