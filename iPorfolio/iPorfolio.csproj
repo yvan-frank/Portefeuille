@@ -84,6 +84,18 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Evaluations\CriteriaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Evaluations\CriteriaForm.Designer.cs">
+      <DependentUpon>CriteriaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Evaluations\ScenarioForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Evaluations\ScenarioForm.Designer.cs">
+      <DependentUpon>ScenarioForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Home\ProjectManagement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +135,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\Evaluations\CriteriaForm.resx">
+      <DependentUpon>CriteriaForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Home\ProjectManagement.resx">
       <DependentUpon>ProjectManagement.cs</DependentUpon>
     </EmbeddedResource>
@@ -165,6 +180,9 @@
       <Project>{68CFED31-89E2-4F11-BB37-DC63586F5516}</Project>
       <Name>Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

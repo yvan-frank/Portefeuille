@@ -52,6 +52,8 @@
     <Compile Include="ScenarioDal.cs" />
     <Compile Include="SqlUtility\DatabaseHelper.cs" />
     <Compile Include="SqlUtility\DbUtils.cs" />
+    <Compile Include="TaskDal.cs" />
+    <Compile Include="TaskPropertyDal.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">

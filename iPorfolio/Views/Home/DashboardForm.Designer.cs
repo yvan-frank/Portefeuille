@@ -28,6 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
@@ -35,8 +39,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.guna2ShadowPanel5 = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.guna2ShadowPanel4 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.lblTasks = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -50,6 +52,7 @@
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.lblCountProject = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.guna2ShadowPanel5.SuspendLayout();
@@ -58,6 +61,7 @@
             this.guna2ShadowPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.guna2ShadowPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2GradientButton1
@@ -89,7 +93,9 @@
             // 
             // panel2
             // 
-            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(241)))), ((int)(((byte)(239)))));
             this.panel2.Controls.Add(this.guna2ShadowPanel5);
             this.panel2.Controls.Add(this.guna2ShadowPanel4);
@@ -104,10 +110,9 @@
             // 
             // guna2ShadowPanel5
             // 
-            this.guna2ShadowPanel5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.guna2ShadowPanel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2ShadowPanel5.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ShadowPanel5.Controls.Add(this.label9);
-            this.guna2ShadowPanel5.Controls.Add(this.label10);
+            this.guna2ShadowPanel5.Controls.Add(this.chart2);
             this.guna2ShadowPanel5.FillColor = System.Drawing.Color.White;
             this.guna2ShadowPanel5.Location = new System.Drawing.Point(621, 215);
             this.guna2ShadowPanel5.Name = "guna2ShadowPanel5";
@@ -115,27 +120,6 @@
             this.guna2ShadowPanel5.ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.Dropped;
             this.guna2ShadowPanel5.Size = new System.Drawing.Size(250, 169);
             this.guna2ShadowPanel5.TabIndex = 4;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 35F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(231)))), ((int)(((byte)(235)))));
-            this.label9.Location = new System.Drawing.Point(85, 56);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(79, 62);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "30";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label10.Location = new System.Drawing.Point(89, 20);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(79, 21);
-            this.label10.TabIndex = 1;
-            this.label10.Text = "EMPLOYE";
             // 
             // guna2ShadowPanel4
             // 
@@ -174,7 +158,6 @@
             // 
             // guna2ShadowPanel3
             // 
-            this.guna2ShadowPanel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.guna2ShadowPanel3.BackColor = System.Drawing.Color.Transparent;
             this.guna2ShadowPanel3.Controls.Add(this.lblTotal);
             this.guna2ShadowPanel3.Controls.Add(this.label6);
@@ -209,7 +192,8 @@
             // 
             // guna2ShadowPanel2
             // 
-            this.guna2ShadowPanel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.guna2ShadowPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2ShadowPanel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2ShadowPanel2.Controls.Add(this.chart1);
             this.guna2ShadowPanel2.Controls.Add(this.label5);
@@ -224,19 +208,33 @@
             // chart1
             // 
             this.chart1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            chartArea2.AxisX.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
+            chartArea2.AxisX.LabelStyle.ForeColor = System.Drawing.Color.YellowGreen;
+            chartArea2.AxisX.MajorGrid.LineColor = System.Drawing.Color.Transparent;
+            chartArea2.AxisX2.MajorGrid.LineColor = System.Drawing.Color.Transparent;
+            chartArea2.AxisY.MajorGrid.LineColor = System.Drawing.Color.Transparent;
+            chartArea2.AxisY2.MajorGrid.LineColor = System.Drawing.Color.Transparent;
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            legend2.Enabled = false;
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
             this.chart1.Location = new System.Drawing.Point(79, 3);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series2.IsValueShownAsLabel = true;
+            series2.LabelForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            series2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
+            this.chart1.Series.Add(series2);
             this.chart1.Size = new System.Drawing.Size(513, 150);
             this.chart1.TabIndex = 2;
             this.chart1.Text = "chart1";
+            title1.Name = "Title1";
+            title1.Text = "Projet par statut";
+            this.chart1.Titles.Add(title1);
             // 
             // label5
             // 
@@ -293,6 +291,26 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "PROJETS";
             // 
+            // chart2
+            // 
+            this.chart2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            chartArea1.AxisX.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
+            chartArea1.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart2.Legends.Add(legend1);
+            this.chart2.Location = new System.Drawing.Point(3, 3);
+            this.chart2.Name = "chart2";
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series1.IsValueShownAsLabel = true;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart2.Series.Add(series1);
+            this.chart2.Size = new System.Drawing.Size(235, 150);
+            this.chart2.TabIndex = 3;
+            this.chart2.Text = "chart2";
+            // 
             // DashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -309,7 +327,6 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.guna2ShadowPanel5.ResumeLayout(false);
-            this.guna2ShadowPanel5.PerformLayout();
             this.guna2ShadowPanel4.ResumeLayout(false);
             this.guna2ShadowPanel4.PerformLayout();
             this.guna2ShadowPanel3.ResumeLayout(false);
@@ -319,6 +336,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.guna2ShadowPanel1.ResumeLayout(false);
             this.guna2ShadowPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -336,13 +354,12 @@
         private System.Windows.Forms.Label lblCountProject;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel5;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel4;
         private System.Windows.Forms.Label lblTasks;
         private System.Windows.Forms.Label label8;
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel3;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
     }
 }

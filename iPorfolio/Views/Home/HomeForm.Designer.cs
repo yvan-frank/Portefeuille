@@ -43,8 +43,11 @@
             this.btnClose = new Guna.UI2.WinForms.Guna2ControlBox();
             this.panContainer = new System.Windows.Forms.Panel();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.btnScenario = new Bunifu.Framework.UI.BunifuTileButton();
+            this.btnCriteria = new Bunifu.Framework.UI.BunifuTileButton();
             this.panHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // panHeader
@@ -94,6 +97,7 @@
             this.btnEvaluation.Size = new System.Drawing.Size(238, 31);
             this.btnEvaluation.TabIndex = 10;
             this.btnEvaluation.Text = "Evaluation du portefeuille";
+            this.btnEvaluation.Click += new System.EventHandler(this.BtnEvaluation_Click);
             // 
             // bunifuThinButton21
             // 
@@ -248,6 +252,8 @@
             this.panContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panContainer.Controls.Add(this.btnCriteria);
+            this.panContainer.Controls.Add(this.btnScenario);
             this.panContainer.Location = new System.Drawing.Point(0, 41);
             this.panContainer.Name = "panContainer";
             this.panContainer.Size = new System.Drawing.Size(999, 607);
@@ -265,6 +271,50 @@
             this.guna2ShadowPanel1.ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.ForwardDiagonal;
             this.guna2ShadowPanel1.Size = new System.Drawing.Size(1008, 7);
             this.guna2ShadowPanel1.TabIndex = 1;
+            // 
+            // btnScenario
+            // 
+            this.btnScenario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnScenario.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnScenario.color = System.Drawing.Color.SeaGreen;
+            this.btnScenario.colorActive = System.Drawing.Color.MediumSeaGreen;
+            this.btnScenario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnScenario.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.btnScenario.ForeColor = System.Drawing.Color.White;
+            this.btnScenario.Image = ((System.Drawing.Image)(resources.GetObject("btnScenario.Image")));
+            this.btnScenario.ImagePosition = 20;
+            this.btnScenario.ImageZoom = 50;
+            this.btnScenario.LabelPosition = 41;
+            this.btnScenario.LabelText = "A partir d\'un scénario existant";
+            this.btnScenario.Location = new System.Drawing.Point(103, 201);
+            this.btnScenario.Margin = new System.Windows.Forms.Padding(6);
+            this.btnScenario.Name = "btnScenario";
+            this.btnScenario.Size = new System.Drawing.Size(302, 214);
+            this.btnScenario.TabIndex = 0;
+            this.btnScenario.Click += new System.EventHandler(this.BtnScenario_Click);
+            // 
+            // btnCriteria
+            // 
+            this.btnCriteria.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCriteria.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnCriteria.color = System.Drawing.Color.SeaGreen;
+            this.btnCriteria.colorActive = System.Drawing.Color.MediumSeaGreen;
+            this.btnCriteria.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCriteria.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.btnCriteria.ForeColor = System.Drawing.Color.White;
+            this.btnCriteria.Image = ((System.Drawing.Image)(resources.GetObject("btnCriteria.Image")));
+            this.btnCriteria.ImagePosition = 20;
+            this.btnCriteria.ImageZoom = 50;
+            this.btnCriteria.LabelPosition = 41;
+            this.btnCriteria.LabelText = "A partir des critères";
+            this.btnCriteria.Location = new System.Drawing.Point(599, 201);
+            this.btnCriteria.Margin = new System.Windows.Forms.Padding(6);
+            this.btnCriteria.Name = "btnCriteria";
+            this.btnCriteria.Size = new System.Drawing.Size(302, 214);
+            this.btnCriteria.TabIndex = 1;
+            this.btnCriteria.Click += new System.EventHandler(this.BtnCriteria_Click);
             // 
             // HomeForm
             // 
@@ -286,6 +336,7 @@
             this.panHeader.ResumeLayout(false);
             this.panHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panContainer.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -306,5 +357,7 @@
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
         private Guna.UI2.WinForms.Guna2Button btnEvaluation;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private Bunifu.Framework.UI.BunifuTileButton btnCriteria;
+        private Bunifu.Framework.UI.BunifuTileButton btnScenario;
     }
 }

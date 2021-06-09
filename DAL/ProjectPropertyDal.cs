@@ -1,5 +1,7 @@
 ﻿
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Data;
 using DAL.SqlUtility;
 using Models;
@@ -12,7 +14,8 @@ namespace DAL
 
         public ProjectPropertyModel GetModel(string numero)
         {
-            string sql = "SELECT * FROM (((projet p INNER JOIN status s ON p.status = s.id) INNER JOIN etat e ON p.etat = e.id) INNER JOIN user u ON p.pm = u.id) where numero = @numero";
+            // sql jointure de 4 tables
+            string sql = "CALL GetJoinData('"+numero+"')";
             MySqlParameter[] parameters =
             {
                 new MySqlParameter("@numero", MySqlDbType.VarChar)
@@ -25,6 +28,41 @@ namespace DAL
             }
 
             return DataRowJoin(ds.Tables[0].Rows[0]);
+        }
+        public ArrayList GetModelList()
+        {
+            //List<ProjectPropertyModel> result = new List<ProjectPropertyModel>();
+            ArrayList result = new ArrayList();
+            string sql = "CALL GetProjectByStatus()";
+           
+            DataSet ds = DatabaseHelper.Query(sql);
+            if (ds.Tables.Count == 0 || ds.Tables[0].Rows.Count == 0)
+            {
+                return null;
+            }
+
+            foreach (DataRow row in ds.Tables[0].Rows)
+            {
+                result.Add(DataRowGetProjetByStatus(row));
+            }
+
+            return result;
+        }
+
+        private ProjectPropertyModel DataRowGetProjetByStatus(DataRow row)
+        {
+            ProjectPropertyModel model = new ProjectPropertyModel();
+            if (row == null) return model;
+            if (row["projetNbr"] != null && row["projetNbr"].ToString() != String.Empty)
+            {
+                model.ProjectByStatus = int.Parse(row["projetNbr"].ToString());
+            }
+            if (row["intitule"] != null && row["intitule"].ToString() != String.Empty)
+            {
+                model.Status = row["intitule"].ToString();
+            }
+
+            return model;
         }
         private ProjectPropertyModel DataRowJoin(DataRow row)
         {
@@ -54,9 +92,13 @@ namespace DAL
             {
                 model.Cost = int.Parse(row["cout"].ToString());
             }
-            if (row["etat"] != null && row["etat"].ToString() != String.Empty)
+            if (row["donePercent"] != null && row["donePercent"].ToString() != String.Empty)
             {
-                model.State = row["etat"].ToString();
+                model.DonePercent = int.Parse(row["donePercent"].ToString());
+            }
+            if (row["intitule"] != null && row["intitule"].ToString() != String.Empty)
+            {
+                model.State = row["intitule"].ToString();
             }
 
             return model;

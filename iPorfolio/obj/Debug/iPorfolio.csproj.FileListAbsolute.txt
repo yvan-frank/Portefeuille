@@ -36,3 +36,4 @@ E:\PROJECT\Portfolio\iPorfolio\obj\Debug\iPorfolio.csproj.CopyComplete
 E:\PROJECT\Portfolio\iPorfolio\obj\Debug\iPorfolio.exe
 E:\PROJECT\Portfolio\iPorfolio\obj\Debug\iPorfolio.pdb
 E:\PROJECT\Portfolio\iPorfolio\obj\Debug\iPorfolio.Views.Home.ProjectManagement.resources
+E:\PROJECT\Portfolio\iPorfolio\obj\Debug\iPorfolio.Views.Evaluations.CriteriaForm.resources

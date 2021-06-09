@@ -46,6 +46,8 @@
     <Compile Include="ProjectPropertyController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScenarioController.cs" />
+    <Compile Include="TaskController.cs" />
+    <Compile Include="TaskPropertyController.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">

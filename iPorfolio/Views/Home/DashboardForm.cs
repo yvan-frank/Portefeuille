@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections;
 using System.Windows.Forms.DataVisualization.Charting;
 using System.Windows.Forms;
 using Controllers;
+using Models;
 
 namespace iPorfolio.Views.Home
 {
@@ -24,6 +26,24 @@ namespace iPorfolio.Views.Home
             lblCountProject.Text = _project.CountProject().ToString();
 
             lblTotal.Text = @"FCFA "+_project.GetCostProject();
+
+            LoadChart();
+        }
+
+        private void LoadChart()
+        {
+            ProjectPropertyController controller = new ProjectPropertyController();
+
+            ArrayList status = new ArrayList();
+            ArrayList nbr = new ArrayList();
+
+            foreach (ProjectPropertyModel model in controller.GetModelList())
+            {
+                status.Add(model.Status);
+                nbr.Add(model.ProjectByStatus);
+            }
+            chart2.Series[0].Points.DataBindXY(status, nbr);
+            chart1.Series[0].Points.DataBindXY(status, nbr);
         }
     }
 }

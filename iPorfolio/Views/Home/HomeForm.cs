@@ -1,6 +1,7 @@
 ﻿
 
 using System.Windows.Forms;
+using iPorfolio.Views.Evaluations;
 
 namespace iPorfolio.Views.Home
 {
@@ -46,6 +47,29 @@ namespace iPorfolio.Views.Home
         private void BtnDashboard_Click(object sender, System.EventArgs e)
         {
             OnChildForm(new DashboardForm());
+        }
+
+        private void BtnEvaluation_Click(object sender, System.EventArgs e)
+        {
+            panContainer.Controls.Clear();
+            btnScenario.Visible = true;
+            btnCriteria.Visible = true;
+            panContainer.Controls.Add(btnScenario);
+            panContainer.Controls.Add(btnCriteria);
+        }
+
+        private void BtnScenario_Click(object sender, System.EventArgs e)
+        {
+            ScenarioForm scenario = new ScenarioForm();
+            scenario.ShowDialog();
+            scenario.ShowInTaskbar = false;
+        }
+
+        private void BtnCriteria_Click(object sender, System.EventArgs e)
+        {
+            CriteriaForm criteria = new CriteriaForm();
+            criteria.ShowInTaskbar = false;
+            criteria.ShowDialog();
         }
     }
 }
