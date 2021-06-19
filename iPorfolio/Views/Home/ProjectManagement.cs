@@ -184,7 +184,7 @@ namespace iPorfolio.Views.Home
             ProjectPropertyController jController = new ProjectPropertyController();
             ProjectPropertyModel model = jController.GetModel(cmbSelectProjet.selectedValue);
 
-            TaskController tcController = new TaskController(); ;
+            TaskController tcController = new TaskController();
             if (cmbSelectProjet.selectedValue == model.NumberProject)
             {
                 if (model.DateDebut != null) lblDateDebut.Text = model.DateDebut.Value.ToLongDateString();

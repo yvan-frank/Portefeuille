@@ -4,8 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsControlLibrary1;
-using iPorfolio.Views;
 using iPorfolio.Views.Home;
+using iPorfolio.Views;
 
 namespace iPorfolio
 {

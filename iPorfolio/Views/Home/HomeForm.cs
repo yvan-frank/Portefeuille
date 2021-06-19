@@ -1,6 +1,7 @@
 ﻿
 
 using System.Windows.Forms;
+using Guna.UI.Lib.ScrollBar;
 using iPorfolio.Views.Evaluations;
 
 namespace iPorfolio.Views.Home
@@ -12,11 +13,7 @@ namespace iPorfolio.Views.Home
             InitializeComponent();
         }
 
-        private void BtnClose_Click(object sender, System.EventArgs e)
-        {
-            Application.Exit();
-        }
-        private Form _activForm = null;
+        private Form _activForm;
         private void OnChildForm(Form childForm)
         {
             if (_activForm != null)
@@ -36,16 +33,21 @@ namespace iPorfolio.Views.Home
 
         private void HomeForm_Load(object sender, System.EventArgs e)
         {
-            OnChildForm(new DashboardForm());
         }
 
+        private PanelScrollHelper panelScroll;
+       
         private void BtnProjet_Click(object sender, System.EventArgs e)
         {
+            btnScenario.Visible = false;
+            btnCriteria.Visible = false;
             OnChildForm(new ProjectManagement());
         }
 
         private void BtnDashboard_Click(object sender, System.EventArgs e)
         {
+            btnScenario.Visible = false;
+            btnCriteria.Visible = false;
             OnChildForm(new DashboardForm());
         }
 
@@ -67,9 +69,17 @@ namespace iPorfolio.Views.Home
 
         private void BtnCriteria_Click(object sender, System.EventArgs e)
         {
-            CriteriaForm criteria = new CriteriaForm();
-            criteria.ShowInTaskbar = false;
+            CriteriaForm criteria = new CriteriaForm {ShowInTaskbar = false};
             criteria.ShowDialog();
+        }
+
+        private void PanContainer_Resize(object sender, System.EventArgs e)
+        {
+        }
+
+        private void BtnExecutive_Click(object sender, System.EventArgs e)
+        {
+            OnChildForm(new ExecutiveDashboardForm());
         }
     }
 }

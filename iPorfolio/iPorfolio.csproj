@@ -96,6 +96,12 @@
     <Compile Include="Views\Evaluations\ScenarioForm.Designer.cs">
       <DependentUpon>ScenarioForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Home\ExecutiveDashboardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Home\ExecutiveDashboardForm.Designer.cs">
+      <DependentUpon>ExecutiveDashboardForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Home\ProjectManagement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +143,9 @@
     </Compile>
     <EmbeddedResource Include="Views\Evaluations\CriteriaForm.resx">
       <DependentUpon>CriteriaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Home\ExecutiveDashboardForm.resx">
+      <DependentUpon>ExecutiveDashboardForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Home\ProjectManagement.resx">
       <DependentUpon>ProjectManagement.cs</DependentUpon>
@@ -184,5 +193,6 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

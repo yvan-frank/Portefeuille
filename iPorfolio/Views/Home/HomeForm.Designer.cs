@@ -33,8 +33,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnEvaluation = new Guna.UI2.WinForms.Guna2Button();
             this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnExecutive = new Guna.UI2.WinForms.Guna2Button();
             this.btnDashboard = new Guna.UI2.WinForms.Guna2Button();
             this.btnProjet = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,9 +41,9 @@
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.btnClose = new Guna.UI2.WinForms.Guna2ControlBox();
             this.panContainer = new System.Windows.Forms.Panel();
-            this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.btnScenario = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnCriteria = new Bunifu.Framework.UI.BunifuTileButton();
+            this.btnScenario = new Bunifu.Framework.UI.BunifuTileButton();
+            this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.panHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panContainer.SuspendLayout();
@@ -58,8 +57,7 @@
             this.panHeader.Controls.Add(this.pictureBox1);
             this.panHeader.Controls.Add(this.btnEvaluation);
             this.panHeader.Controls.Add(this.bunifuThinButton21);
-            this.panHeader.Controls.Add(this.guna2Button4);
-            this.panHeader.Controls.Add(this.guna2Button3);
+            this.panHeader.Controls.Add(this.btnExecutive);
             this.panHeader.Controls.Add(this.btnDashboard);
             this.panHeader.Controls.Add(this.btnProjet);
             this.panHeader.Controls.Add(this.label1);
@@ -125,39 +123,23 @@
             this.bunifuThinButton21.TabIndex = 0;
             this.bunifuThinButton21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // guna2Button4
+            // btnExecutive
             // 
-            this.guna2Button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Button4.CheckedState.Parent = this.guna2Button4;
-            this.guna2Button4.CustomImages.Parent = this.guna2Button4;
-            this.guna2Button4.DisabledState.Parent = this.guna2Button4;
-            this.guna2Button4.FillColor = System.Drawing.Color.White;
-            this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button4.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button4.HoverState.Parent = this.guna2Button4;
-            this.guna2Button4.Location = new System.Drawing.Point(719, 10);
-            this.guna2Button4.Name = "guna2Button4";
-            this.guna2Button4.ShadowDecoration.Parent = this.guna2Button4;
-            this.guna2Button4.Size = new System.Drawing.Size(79, 23);
-            this.guna2Button4.TabIndex = 9;
-            this.guna2Button4.Text = "Export Pdf";
-            // 
-            // guna2Button3
-            // 
-            this.guna2Button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Button3.CheckedState.Parent = this.guna2Button3;
-            this.guna2Button3.CustomImages.Parent = this.guna2Button3;
-            this.guna2Button3.DisabledState.Parent = this.guna2Button3;
-            this.guna2Button3.FillColor = System.Drawing.Color.White;
-            this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button3.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button3.HoverState.Parent = this.guna2Button3;
-            this.guna2Button3.Location = new System.Drawing.Point(628, 4);
-            this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.ShadowDecoration.Parent = this.guna2Button3;
-            this.guna2Button3.Size = new System.Drawing.Size(85, 31);
-            this.guna2Button3.TabIndex = 8;
-            this.guna2Button3.Text = "Export CSV";
+            this.btnExecutive.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExecutive.CheckedState.Parent = this.btnExecutive;
+            this.btnExecutive.CustomImages.Parent = this.btnExecutive;
+            this.btnExecutive.DisabledState.Parent = this.btnExecutive;
+            this.btnExecutive.FillColor = System.Drawing.Color.White;
+            this.btnExecutive.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnExecutive.ForeColor = System.Drawing.Color.Black;
+            this.btnExecutive.HoverState.Parent = this.btnExecutive;
+            this.btnExecutive.Location = new System.Drawing.Point(592, 6);
+            this.btnExecutive.Name = "btnExecutive";
+            this.btnExecutive.ShadowDecoration.Parent = this.btnExecutive;
+            this.btnExecutive.Size = new System.Drawing.Size(148, 31);
+            this.btnExecutive.TabIndex = 8;
+            this.btnExecutive.Text = "Executive Dashboard";
+            this.btnExecutive.Click += new System.EventHandler(this.BtnExecutive_Click);
             // 
             // btnDashboard
             // 
@@ -258,41 +240,7 @@
             this.panContainer.Name = "panContainer";
             this.panContainer.Size = new System.Drawing.Size(999, 607);
             this.panContainer.TabIndex = 4;
-            // 
-            // guna2ShadowPanel1
-            // 
-            this.guna2ShadowPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ShadowPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(44)))), ((int)(((byte)(64)))));
-            this.guna2ShadowPanel1.Location = new System.Drawing.Point(-1, 39);
-            this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
-            this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
-            this.guna2ShadowPanel1.ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.ForwardDiagonal;
-            this.guna2ShadowPanel1.Size = new System.Drawing.Size(1008, 7);
-            this.guna2ShadowPanel1.TabIndex = 1;
-            // 
-            // btnScenario
-            // 
-            this.btnScenario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnScenario.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnScenario.color = System.Drawing.Color.SeaGreen;
-            this.btnScenario.colorActive = System.Drawing.Color.MediumSeaGreen;
-            this.btnScenario.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnScenario.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.btnScenario.ForeColor = System.Drawing.Color.White;
-            this.btnScenario.Image = ((System.Drawing.Image)(resources.GetObject("btnScenario.Image")));
-            this.btnScenario.ImagePosition = 20;
-            this.btnScenario.ImageZoom = 50;
-            this.btnScenario.LabelPosition = 41;
-            this.btnScenario.LabelText = "A partir d\'un scénario existant";
-            this.btnScenario.Location = new System.Drawing.Point(103, 201);
-            this.btnScenario.Margin = new System.Windows.Forms.Padding(6);
-            this.btnScenario.Name = "btnScenario";
-            this.btnScenario.Size = new System.Drawing.Size(302, 214);
-            this.btnScenario.TabIndex = 0;
-            this.btnScenario.Click += new System.EventHandler(this.BtnScenario_Click);
+            this.panContainer.Resize += new System.EventHandler(this.PanContainer_Resize);
             // 
             // btnCriteria
             // 
@@ -314,7 +262,44 @@
             this.btnCriteria.Name = "btnCriteria";
             this.btnCriteria.Size = new System.Drawing.Size(302, 214);
             this.btnCriteria.TabIndex = 1;
+            this.btnCriteria.Visible = false;
             this.btnCriteria.Click += new System.EventHandler(this.BtnCriteria_Click);
+            // 
+            // btnScenario
+            // 
+            this.btnScenario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnScenario.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnScenario.color = System.Drawing.Color.SeaGreen;
+            this.btnScenario.colorActive = System.Drawing.Color.MediumSeaGreen;
+            this.btnScenario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnScenario.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.btnScenario.ForeColor = System.Drawing.Color.White;
+            this.btnScenario.Image = ((System.Drawing.Image)(resources.GetObject("btnScenario.Image")));
+            this.btnScenario.ImagePosition = 20;
+            this.btnScenario.ImageZoom = 50;
+            this.btnScenario.LabelPosition = 41;
+            this.btnScenario.LabelText = "A partir d\'un scénario existant";
+            this.btnScenario.Location = new System.Drawing.Point(103, 201);
+            this.btnScenario.Margin = new System.Windows.Forms.Padding(6);
+            this.btnScenario.Name = "btnScenario";
+            this.btnScenario.Size = new System.Drawing.Size(302, 214);
+            this.btnScenario.TabIndex = 0;
+            this.btnScenario.Visible = false;
+            this.btnScenario.Click += new System.EventHandler(this.BtnScenario_Click);
+            // 
+            // guna2ShadowPanel1
+            // 
+            this.guna2ShadowPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(44)))), ((int)(((byte)(64)))));
+            this.guna2ShadowPanel1.Location = new System.Drawing.Point(-1, 39);
+            this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
+            this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
+            this.guna2ShadowPanel1.ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.ForwardDiagonal;
+            this.guna2ShadowPanel1.Size = new System.Drawing.Size(997, 7);
+            this.guna2ShadowPanel1.TabIndex = 1;
             // 
             // HomeForm
             // 
@@ -348,8 +333,7 @@
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox2;
         private Guna.UI2.WinForms.Guna2ControlBox btnClose;
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button4;
-        private Guna.UI2.WinForms.Guna2Button guna2Button3;
+        private Guna.UI2.WinForms.Guna2Button btnExecutive;
         private Guna.UI2.WinForms.Guna2Button btnDashboard;
         private Guna.UI2.WinForms.Guna2Button btnProjet;
         private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton21;

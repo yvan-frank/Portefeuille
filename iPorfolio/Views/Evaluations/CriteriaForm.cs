@@ -8,6 +8,9 @@ namespace iPorfolio.Views.Evaluations
 {
     public partial class CriteriaForm : Form
     {
+        ProjectController cp = new ProjectController();
+        #region Variables ponderations
+
         // les quotients de ponderation
         private const int CoherenceDegreeWithTheMission = 1;
         private const int AlignmentWithTheEnterpriseStrategy = 3;
@@ -28,6 +31,8 @@ namespace iPorfolio.Views.Evaluations
         private const int C = 0;//neutre, moyen
         private const int D = 1;// tres fort
         private const int E = 2;//tres tres fort
+
+        #endregion
         public CriteriaForm()
         {
             InitializeComponent();
@@ -37,7 +42,7 @@ namespace iPorfolio.Views.Evaluations
         {
             guna2ShadowForm1.SetShadowForm(this);
             guna2ShadowForm1.ShadowColor = Color.Blue;
-            MessageBox.Show("Le critere de selection est une serie de questions auxquelles vous repondrez");
+            MessageBox.Show(@"Le critere de selection est une serie de questions auxquelles vous repondrez");
 
             CriteriaController criteria = new CriteriaController();
 
@@ -59,7 +64,7 @@ namespace iPorfolio.Views.Evaluations
                     cmbressource.Items.Add(model.DisponibilteDesRessources);
                     cmdRisk.Items.Add(model.DegreeDeRiskDuringSonExecution);
                 }
-                catch (Exception exception)
+                catch 
                 {
                     MessageBox.Show(@"Waiting for connection...");
                 }
@@ -75,13 +80,20 @@ namespace iPorfolio.Views.Evaluations
 
         private void Loadproject()
         {
-            ProjectController cp = new ProjectController();
             foreach (ProjectModel model in cp.GetAll())
             {
-                cmbP.Items.Add(model.ProjectName);
+                cmbP.Items.Add(model.NumberProject);
             }
         }
 
+        private void Insert()
+        {
+            EvaluationModel model = new EvaluationModel();
+            EvaluationController controller = new EvaluationController();
+            model.Score = result;
+
+            MessageBox.Show(controller.Insert(model) > 0 ? @"Insertion reussie" : "Echec");
+        }
         #region combobox
 
         private void Resultat()
@@ -423,5 +435,29 @@ namespace iPorfolio.Views.Evaluations
 
         }
         #endregion
+
+        private void BtnEvaluer_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show(@"Aucun critère n'a été sélectionné, voulez-vous continuer?", @"Information!",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            {
+                Insert();
+            }
+        }
+
+        private void CmbP_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ProjectPropertyController property = new ProjectPropertyController();
+            ProjectPropertyModel model = property.GetModel(cmbP.SelectedItem.ToString());
+
+            if (cmbP.SelectedItem.ToString() == model.NumberProject)
+            {
+                lblStatus.Text = model.Status;
+                lblNum.Text = model.ProjectName;
+                lblPercent.Text = model.DonePercent.ToString();
+                lblstrag.Text = model.Strategy;
+            }
+            
+        }
     }
 }

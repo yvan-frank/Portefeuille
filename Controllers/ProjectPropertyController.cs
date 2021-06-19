@@ -15,6 +15,10 @@ namespace Controllers
             return dal.GetModel(numero);
         }
 
+        public ProjectPropertyModel GetName(string name)
+        {
+            return dal.GetModelName(name);
+        }
         public ArrayList GetModelList()
         {
             return dal.GetModelList();

@@ -5,6 +5,8 @@ namespace Models
     public class ProjectPropertyModel
     {
         public string NumberProject { get; set; }
+        public string ProjectName { get; set; }
+        public string Strategy { get; set; }
         public string FunctionName { get; set; }
         public int? Cost { get; set; }
         public DateTime? DateDebut { get; set; }

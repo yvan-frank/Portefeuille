@@ -29,6 +29,23 @@ namespace DAL
 
             return DataRowJoin(ds.Tables[0].Rows[0]);
         }
+        public ProjectPropertyModel GetModelName(string nom)
+        {
+            // sql jointure de 4 tables
+            string sql = "CALL GetName('"+nom+"')";
+            MySqlParameter[] parameters =
+            {
+                new MySqlParameter("@nom", MySqlDbType.VarChar)
+            };
+            parameters[0].Value = nom;
+            DataSet ds = DatabaseHelper.Query(sql, parameters);
+            if (ds.Tables.Count == 0 || ds.Tables[0].Rows.Count == 0)
+            {
+                return null;
+            }
+
+            return DataRowJoin(ds.Tables[0].Rows[0]);
+        }
         public ArrayList GetModelList()
         {
             //List<ProjectPropertyModel> result = new List<ProjectPropertyModel>();
@@ -99,6 +116,14 @@ namespace DAL
             if (row["intitule"] != null && row["intitule"].ToString() != String.Empty)
             {
                 model.State = row["intitule"].ToString();
+            }
+            if (row["nom"] != null && row["nom"].ToString() != String.Empty)
+            {
+                model.ProjectName = row["nom"].ToString();
+            }
+            if (row["type"] != null && row["type"].ToString() != String.Empty)
+            {
+                model.Strategy = row["type"].ToString();
             }
 
             return model;

@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CriteriaModel.cs" />
-    <Compile Include="Evaluation.cs" />
+    <Compile Include="EvaluationModel.cs" />
     <Compile Include="PonderationModel.cs" />
     <Compile Include="ProjectModel.cs" />
     <Compile Include="ProjectPropertyModel.cs" />

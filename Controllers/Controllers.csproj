@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CriteriaController.cs" />
+    <Compile Include="EvaluationController.cs" />
     <Compile Include="ProjectController.cs" />
     <Compile Include="ProjectPropertyController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
