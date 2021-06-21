@@ -29,6 +29,5 @@ namespace iPorfolio.Views
                 home.Show();
             }
         }
-
     }
 }

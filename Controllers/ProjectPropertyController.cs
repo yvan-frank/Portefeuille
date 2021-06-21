@@ -10,6 +10,11 @@ namespace Controllers
     {
         private ProjectPropertyDal dal = new ProjectPropertyDal();
 
+        public List<ProjectPropertyModel> GetAll()
+        {
+            return dal.GetAll();
+        }
+
         public ProjectPropertyModel GetModel(string numero)
         {
             return dal.GetModel(numero);

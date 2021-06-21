@@ -16,10 +16,5 @@ namespace Controllers
         {
             return dal.Insert(model);
         }
-
-        public ProjectModel GetModel(string nom)
-        {
-            return dal.GetModel(nom);
-        }
     }
 }

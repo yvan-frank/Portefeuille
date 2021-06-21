@@ -1,8 +1,6 @@
 ﻿
-using System.Drawing;
 using System.Windows.Forms;
 using Guna.UI.Lib.ScrollBar;
-using Guna.UI2.WinForms;
 
 namespace iPorfolio.Views.Home
 {
@@ -31,17 +29,6 @@ namespace iPorfolio.Views.Home
         private void Guna2Panel4_Paint(object sender, PaintEventArgs e)
         {
 
-        }
-
-        private void BtnShowSide_Click(object sender, System.EventArgs e)
-        {
-            panside.Visible = true;
-            panside.BringToFront();
-        }
-
-        private void MetroButton1_Click(object sender, System.EventArgs e)
-        {
-            panside.Visible = false;
         }
     }
 }

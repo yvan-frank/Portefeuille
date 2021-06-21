@@ -95,6 +95,7 @@
             this.guna2WinProgressIndicator1.Location = new System.Drawing.Point(415, 254);
             this.guna2WinProgressIndicator1.Name = "guna2WinProgressIndicator1";
             this.guna2WinProgressIndicator1.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.guna2WinProgressIndicator1.ShadowDecoration.Parent = this.guna2WinProgressIndicator1;
             this.guna2WinProgressIndicator1.Size = new System.Drawing.Size(64, 64);
             this.guna2WinProgressIndicator1.TabIndex = 8;
             this.guna2WinProgressIndicator1.UseTransparentBackground = true;

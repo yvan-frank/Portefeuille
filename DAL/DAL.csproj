@@ -54,6 +54,7 @@
     <Compile Include="SqlUtility\DbUtils.cs" />
     <Compile Include="TaskDal.cs" />
     <Compile Include="TaskPropertyDal.cs" />
+    <Compile Include="UserDal.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">

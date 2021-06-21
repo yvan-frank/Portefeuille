@@ -49,6 +49,7 @@
     <Compile Include="ScenarioController.cs" />
     <Compile Include="TaskController.cs" />
     <Compile Include="TaskPropertyController.cs" />
+    <Compile Include="UserController.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">
