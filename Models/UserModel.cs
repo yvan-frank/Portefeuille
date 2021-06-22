@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace Models
 {
-    class UserModel
+    public class UserModel
     {
         public int UserId { get; set; }
         public int RuleId { get; set; }
+        
         public string Username { get; set; }
         public string Password { get; set; }
     }

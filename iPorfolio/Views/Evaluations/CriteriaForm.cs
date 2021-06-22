@@ -9,6 +9,7 @@ namespace iPorfolio.Views.Evaluations
     public partial class CriteriaForm : Form
     {
         ProjectController cp = new ProjectController();
+
         #region Variables ponderations
 
         // les quotients de ponderation
@@ -33,6 +34,7 @@ namespace iPorfolio.Views.Evaluations
         private const int E = 2;//tres tres fort
 
         #endregion
+
         public CriteriaForm()
         {
             InitializeComponent();
@@ -86,14 +88,7 @@ namespace iPorfolio.Views.Evaluations
             }
         }
 
-        private void Insert()
-        {
-            EvaluationModel model = new EvaluationModel();
-            EvaluationController controller = new EvaluationController();
-            model.Score = result;
-
-            MessageBox.Show(controller.Insert(model) > 0 ? @"Insertion reussie" : "Echec");
-        }
+        
         #region combobox
 
         private void Resultat()
@@ -116,7 +111,32 @@ namespace iPorfolio.Views.Evaluations
         int innovant;
         int skills;
 
-       
+        private void Insert()
+        {
+            EvaluationModel model = new EvaluationModel();
+            EvaluationController controller = new EvaluationController();
+            model.Score = result;
+            model.ProjectNumber = cmbP.SelectedItem.ToString();
+            model.CoherenceDegreeWithTheMission = _coefMission;
+            model.AlignmentWithTheEnterpriseStrategy = strategy;
+            model.UrgencyProjectDegree = urgency;
+            model.ObjectiveProjectStability = stable;
+            model.SoutienDesPartiesPrenantes = soutien;
+            model.DureeDuProjet = duree;
+            model.CoutduProjet = cout;
+            model.DisponibilteDesRessources = resource;
+            model.DegreeDeRiskDuringSonExecution = risk;
+            model.DegreeDeComplxiteDuProjet = complex;
+            model.CaractereInnovation = innovant;
+            model.SkillsDevelop = skills;
+
+            if (controller.Insert(model) > 0)
+            {
+                MessageBox.Show(@"EVALUATION TERMINEE");
+            }
+            else
+                MessageBox.Show(@"Insertion error");
+        }
 
         private void CmbCoMission_SelectedIndexChanged(object sender, EventArgs e)
         {

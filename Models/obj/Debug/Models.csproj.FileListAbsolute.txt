@@ -3,3 +3,4 @@ E:\PROJECT\Portfolio\Models\bin\Debug\Models.pdb
 E:\PROJECT\Portfolio\Models\obj\Debug\Models.csproj.CoreCompileInputs.cache
 E:\PROJECT\Portfolio\Models\obj\Debug\Models.dll
 E:\PROJECT\Portfolio\Models\obj\Debug\Models.pdb
+E:\PROJECT\Portfolio\Models\obj\Debug\Models.csprojAssemblyReference.cache

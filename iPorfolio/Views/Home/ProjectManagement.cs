@@ -111,6 +111,8 @@ namespace iPorfolio.Views.Home
                 string num = projectController.GenerateNumber();
                 var substring = num.Substring(0, 5);
                 string str = projectController.GenerateNumber();
+
+                // extraction dans une chaine de tab en entree aux positions definies par un modele d expression reguliere
                 string[] numbers = Regex.Split(str, @"\D+");
                 foreach (string nbr in numbers)
                 {
@@ -167,6 +169,7 @@ namespace iPorfolio.Views.Home
         {
             
         }
+
         #region Manage project
 
         private void GetDataProject()
@@ -234,5 +237,6 @@ namespace iPorfolio.Views.Home
 
 
         #endregion
+
     }
 }

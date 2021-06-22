@@ -49,7 +49,7 @@ namespace DAL.SqlUtility
 
                     return val;
                 }
-                catch (MySqlException e)
+                catch
                 {
                     return 0;
                 }

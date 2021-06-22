@@ -16,6 +16,14 @@ namespace DAL
 
             return val;
         }
+
+        public int GetALLTasks()
+        {
+            string sql = "select count(*) from task";
+            int val = DatabaseHelper.ExecuteSqlCount(sql);
+
+            return val;
+        }
         public TaskModel DataRowToModel(DataRow row)
         {
             TaskModel model = new TaskModel();

@@ -15,5 +15,7 @@ namespace Models
         public string Status { get; set; }
         public int? ProjectByStatus { get; set; }
         public int? DonePercent { get; set; }
+        public int Duration { get; set; }
+
     }
 }

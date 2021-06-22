@@ -298,7 +298,7 @@
             this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
             this.guna2ShadowPanel1.ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.ForwardDiagonal;
-            this.guna2ShadowPanel1.Size = new System.Drawing.Size(997, 7);
+            this.guna2ShadowPanel1.Size = new System.Drawing.Size(1017, 7);
             this.guna2ShadowPanel1.TabIndex = 1;
             // 
             // HomeForm

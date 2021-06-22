@@ -11,5 +11,10 @@ namespace Controllers
         {
             return dal.CountTaskProject(num);
         }
+
+        public int GetALLTasks()
+        {
+            return dal.GetALLTasks();
+        }
     }
 }

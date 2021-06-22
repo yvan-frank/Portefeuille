@@ -29,13 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProjectManagement));
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProjectManagement));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabProjetPan = new System.Windows.Forms.TabPage();
+            this.guna2ShadowPanel8 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.btnEval = new Guna.UI2.WinForms.Guna2Chip();
+            this.label32 = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.label13 = new System.Windows.Forms.Label();
@@ -47,6 +50,7 @@
             this.solidGaugeTasks = new LiveCharts.WinForms.SolidGauge();
             this.lblTasks = new System.Windows.Forms.Label();
             this.guna2ShadowPanel4 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label24 = new System.Windows.Forms.Label();
             this.guna2ShadowPanel5 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.label26 = new System.Windows.Forms.Label();
@@ -135,14 +139,15 @@
             this.gunaSeparator9 = new Guna.UI.WinForms.GunaSeparator();
             this.gunaComboBox7 = new Guna.UI.WinForms.GunaComboBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabControl1.SuspendLayout();
             this.tabProjetPan.SuspendLayout();
+            this.guna2ShadowPanel8.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             this.guna2ShadowPanel1.SuspendLayout();
             this.guna2ShadowPanel2.SuspendLayout();
             this.guna2ShadowPanel3.SuspendLayout();
             this.guna2ShadowPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.guna2ShadowPanel5.SuspendLayout();
             this.guna2ShadowPanel6.SuspendLayout();
             this.guna2ShadowPanel7.SuspendLayout();
@@ -161,7 +166,6 @@
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -177,13 +181,14 @@
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1145, 729);
+            this.tabControl1.Size = new System.Drawing.Size(1145, 788);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tabControl1.TabIndex = 0;
             // 
             // tabProjetPan
             // 
             this.tabProjetPan.AutoScroll = true;
+            this.tabProjetPan.Controls.Add(this.guna2ShadowPanel8);
             this.tabProjetPan.Controls.Add(this.guna2Panel1);
             this.tabProjetPan.Controls.Add(this.panel8);
             this.tabProjetPan.Controls.Add(this.guna2GradientButton1);
@@ -191,10 +196,51 @@
             this.tabProjetPan.Location = new System.Drawing.Point(4, 30);
             this.tabProjetPan.Name = "tabProjetPan";
             this.tabProjetPan.Padding = new System.Windows.Forms.Padding(3);
-            this.tabProjetPan.Size = new System.Drawing.Size(1137, 695);
+            this.tabProjetPan.Size = new System.Drawing.Size(1137, 754);
             this.tabProjetPan.TabIndex = 0;
             this.tabProjetPan.Text = "Projet";
             this.tabProjetPan.UseVisualStyleBackColor = true;
+            // 
+            // guna2ShadowPanel8
+            // 
+            this.guna2ShadowPanel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2ShadowPanel8.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel8.Controls.Add(this.btnEval);
+            this.guna2ShadowPanel8.Controls.Add(this.label32);
+            this.guna2ShadowPanel8.FillColor = System.Drawing.Color.White;
+            this.guna2ShadowPanel8.Location = new System.Drawing.Point(8, 471);
+            this.guna2ShadowPanel8.Name = "guna2ShadowPanel8";
+            this.guna2ShadowPanel8.ShadowColor = System.Drawing.Color.Black;
+            this.guna2ShadowPanel8.Size = new System.Drawing.Size(1121, 283);
+            this.guna2ShadowPanel8.TabIndex = 8;
+            // 
+            // btnEval
+            // 
+            this.btnEval.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnEval.AutoRoundedCorners = true;
+            this.btnEval.BorderRadius = 40;
+            this.btnEval.FillColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnEval.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.btnEval.ForeColor = System.Drawing.Color.White;
+            this.btnEval.Location = new System.Drawing.Point(522, 124);
+            this.btnEval.Name = "btnEval";
+            this.btnEval.ShadowDecoration.Parent = this.btnEval;
+            this.btnEval.Size = new System.Drawing.Size(272, 83);
+            this.btnEval.TabIndex = 9;
+            this.btnEval.Text = "Veuillez procéder à l\'évaluation";
+            // 
+            // label32
+            // 
+            this.label32.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Segoe UI", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label32.Location = new System.Drawing.Point(363, 33);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(538, 72);
+            this.label32.TabIndex = 8;
+            this.label32.Text = "PROJET NON EVALUE";
             // 
             // guna2Panel1
             // 
@@ -318,6 +364,39 @@
             this.guna2ShadowPanel4.ShadowColor = System.Drawing.Color.Black;
             this.guna2ShadowPanel4.Size = new System.Drawing.Size(377, 292);
             this.guna2ShadowPanel4.TabIndex = 10;
+            // 
+            // chart1
+            // 
+            this.chart1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            chartArea1.AxisX.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
+            chartArea1.AxisX.LabelStyle.ForeColor = System.Drawing.Color.YellowGreen;
+            chartArea1.AxisX.LineColor = System.Drawing.Color.Transparent;
+            chartArea1.AxisX.MajorGrid.LineColor = System.Drawing.Color.Transparent;
+            chartArea1.AxisX2.MajorGrid.LineColor = System.Drawing.Color.Transparent;
+            chartArea1.AxisY.LineColor = System.Drawing.Color.Transparent;
+            chartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.Transparent;
+            chartArea1.AxisY2.MajorGrid.LineColor = System.Drawing.Color.Transparent;
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Enabled = false;
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(7, 72);
+            this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series1.IsValueShownAsLabel = true;
+            series1.LabelForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            series1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(351, 150);
+            this.chart1.TabIndex = 3;
+            this.chart1.Text = "chart1";
+            title1.Name = "Title1";
+            title1.Text = "Projet par statut";
+            this.chart1.Titles.Add(title1);
             // 
             // label24
             // 
@@ -592,7 +671,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 30);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1137, 695);
+            this.tabPage2.Size = new System.Drawing.Size(1137, 754);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Créer un projet";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -1137,7 +1216,7 @@
             this.tabPage3.Controls.Add(this.gunaComboBox7);
             this.tabPage3.Location = new System.Drawing.Point(4, 30);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1137, 695);
+            this.tabPage3.Size = new System.Drawing.Size(1137, 754);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Paramétrer le projet";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -1452,45 +1531,12 @@
             this.imageList1.Images.SetKeyName(0, "icons8_send_hot_list_48.png");
             this.imageList1.Images.SetKeyName(1, "icons8_settings_3_filled.ico");
             // 
-            // chart1
-            // 
-            this.chart1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            chartArea1.AxisX.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
-            chartArea1.AxisX.LabelStyle.ForeColor = System.Drawing.Color.YellowGreen;
-            chartArea1.AxisX.LineColor = System.Drawing.Color.Transparent;
-            chartArea1.AxisX.MajorGrid.LineColor = System.Drawing.Color.Transparent;
-            chartArea1.AxisX2.MajorGrid.LineColor = System.Drawing.Color.Transparent;
-            chartArea1.AxisY.LineColor = System.Drawing.Color.Transparent;
-            chartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.Transparent;
-            chartArea1.AxisY2.MajorGrid.LineColor = System.Drawing.Color.Transparent;
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Enabled = false;
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(7, 72);
-            this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
-            series1.IsValueShownAsLabel = true;
-            series1.LabelForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            series1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(351, 150);
-            this.chart1.TabIndex = 3;
-            this.chart1.Text = "chart1";
-            title1.Name = "Title1";
-            title1.Text = "Projet par statut";
-            this.chart1.Titles.Add(title1);
-            // 
             // ProjectManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1145, 729);
+            this.ClientSize = new System.Drawing.Size(1145, 788);
             this.ControlBox = false;
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -1499,6 +1545,8 @@
             this.Load += new System.EventHandler(this.AddProject_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabProjetPan.ResumeLayout(false);
+            this.guna2ShadowPanel8.ResumeLayout(false);
+            this.guna2ShadowPanel8.PerformLayout();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2ShadowPanel1.ResumeLayout(false);
             this.guna2ShadowPanel1.PerformLayout();
@@ -1508,6 +1556,7 @@
             this.guna2ShadowPanel3.PerformLayout();
             this.guna2ShadowPanel4.ResumeLayout(false);
             this.guna2ShadowPanel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.guna2ShadowPanel5.ResumeLayout(false);
             this.guna2ShadowPanel5.PerformLayout();
             this.guna2ShadowPanel6.ResumeLayout(false);
@@ -1539,7 +1588,6 @@
             this.panel6.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1648,5 +1696,8 @@
         private LiveCharts.WinForms.SolidGauge solidGaugeTasks;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel8;
+        private System.Windows.Forms.Label label32;
+        private Guna.UI2.WinForms.Guna2Chip btnEval;
     }
 }

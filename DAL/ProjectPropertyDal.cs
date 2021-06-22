@@ -11,7 +11,24 @@ namespace DAL
 {
     public class ProjectPropertyDal
     {
+        public List<ProjectPropertyModel> GetAll()
+        {
+            List<ProjectPropertyModel> result = new List<ProjectPropertyModel>();
+            string sql = "CALL GetAllProjectByJointure()";
+            DataSet ds = DatabaseHelper.Query(sql);
 
+            if (ds.Tables.Count == 0)
+            {
+                return result;
+            }
+
+            foreach (DataRow row in ds.Tables[0].Rows)
+            {
+                result.Add(DataRowJoin(row));
+            }
+
+            return result;
+        } 
         public ProjectPropertyModel GetModel(string numero)
         {
             // sql jointure de 4 tables
@@ -124,6 +141,10 @@ namespace DAL
             if (row["type"] != null && row["type"].ToString() != String.Empty)
             {
                 model.Strategy = row["type"].ToString();
+            }
+            if (row["estimateDate"] != null && row["estimateDate"].ToString() != String.Empty)
+            {
+                model.Duration = int.Parse(row["estimateDate"].ToString());
             }
 
             return model;

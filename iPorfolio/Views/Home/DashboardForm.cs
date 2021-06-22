@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections;
-using System.Windows.Forms.DataVisualization.Charting;
 using System.Windows.Forms;
 using Controllers;
+using iPorfolio.Views.Controls;
 using Models;
 
 namespace iPorfolio.Views.Home
@@ -10,6 +10,8 @@ namespace iPorfolio.Views.Home
     public partial class DashboardForm : Form
     {
         private ProjectController _project = new ProjectController();
+        private TaskController _task = new TaskController();
+      
         public DashboardForm()
         {
             InitializeComponent();
@@ -17,17 +19,15 @@ namespace iPorfolio.Views.Home
 
         private void DashboardForm_Load(object sender, EventArgs e)
         {
-            string[] x = { "Open", "InProgress", "Completed", "Onhold", "Cancel" };
-            int[] y = { 30, 28, 25, 25, 0 };
-            chart1.Series[0].ChartType = SeriesChartType.Bar;
-            chart1.Series[0].Points.DataBindXY(x, y);
-            chart1.Legends[0].Enabled = true;
-            //chart1.ChartAreas[0].Area3DStyle.Enable3D = true;
+           
             lblCountProject.Text = _project.CountProject().ToString();
 
             lblTotal.Text = @"FCFA "+_project.GetCostProject();
+            lblTasks.Text = _task.GetALLTasks().ToString();
 
             LoadChart();
+            LoadDataTable();
+
         }
 
         private void LoadChart()
@@ -44,6 +44,46 @@ namespace iPorfolio.Views.Home
             }
             chart2.Series[0].Points.DataBindXY(status, nbr);
             chart1.Series[0].Points.DataBindXY(status, nbr);
+        }
+
+        private void LoadDataTable()
+        {
+            var dataC = new Datacontrol();
+
+            gunaLinePanel1.Controls.Add(dataC);
+            ProjectPropertyController pcController = new ProjectPropertyController();
+
+            foreach (ProjectPropertyModel mod in pcController.GetAll())
+            {
+                string[] chef1 = { mod.FunctionName };
+                string[] numbe = { mod.NumberProject };
+                string[] nom = { mod.ProjectName };
+                string[] dateDebut = { mod.DateDebut.Value.ToShortDateString() };
+                string[] datefin = {mod.DateFin.Value.ToLongDateString() };
+                string[] avancement = { mod.DonePercent + " %" };
+                string[] cout = { mod.Cost + " FCFA" };
+
+                for (int i = 0; i < 1; i++)
+                {
+                    var con = new UserControl1();
+                    con.Dock = DockStyle.Top;
+                    con.lbChef.Text = chef1[i];
+                    con.lbNom.Text = numbe[i];
+                    con.lblNm.Text = nom[i];
+                    con.lbDebut.Text = dateDebut[i];
+                    con.lbDateCible.Text = @"Date cible " + datefin[i];
+                    con.lbAvancement.Text = avancement[i];
+                    con.lbCout.Text = cout[i];
+
+                    pnList.Controls.Add(con);
+                }
+            }
+
+        }
+
+        private void Panel1_Resize(object sender, EventArgs e)
+        {
+           
         }
     }
 }
