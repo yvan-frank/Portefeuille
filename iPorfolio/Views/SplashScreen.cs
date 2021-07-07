@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using iPorfolio.Views.Home;
+using iPorfolio.Views.Login;
 
 
 namespace iPorfolio.Views
@@ -25,8 +26,8 @@ namespace iPorfolio.Views
                 //timer1.Enabled = false;
                 timer1.Stop();
                 this.Hide();
-                var home = new HomeForm();
-                home.Show();
+                var login = new LoginForm();
+                login.Show();
             }
         }
     }

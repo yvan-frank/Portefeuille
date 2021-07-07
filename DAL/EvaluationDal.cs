@@ -1,5 +1,7 @@
 ﻿
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Data;
 using DAL.SqlUtility;
 using Models;
@@ -9,6 +11,69 @@ namespace DAL
 {
     public class EvaluationDal
     {
+        public List<EvaluationModel> GetListEvaluation()
+        {
+            List<EvaluationModel> result = new List<EvaluationModel>();
+            string sql = "select * from evaluation";
+            DataSet ds = DatabaseHelper.Query(sql);
+
+            if (ds.Tables.Count == 0)
+            {
+                return result;
+            }
+
+            foreach (DataRow row in ds.Tables[0].Rows)
+            {
+                result.Add(DataRowToModel(row));
+            }
+
+            return result;
+        }
+
+        public int GetMaxScore()
+        {
+            string sql = "select max(score) from evaluation";
+
+            int val = DatabaseHelper.ExecuteSqlCount(sql);
+
+            return val;
+        }
+        public EvaluationModel GetModelEvaluation(string numero)
+        {
+            // sql jointure de 4 tables
+            string sql = "select * from evaluation where project_number = @numero";
+            MySqlParameter[] parameters =
+            {
+                new MySqlParameter("@numero", MySqlDbType.VarChar)
+            };
+            parameters[0].Value = numero;
+            DataSet ds = DatabaseHelper.Query(sql, parameters);
+            if (ds.Tables.Count == 0 || ds.Tables[0].Rows.Count == 0)
+            {
+                return null;
+            }
+
+            return DataRowToModel(ds.Tables[0].Rows[0]);
+        }
+        public ArrayList GetModelList()
+        {
+            //List<ProjectPropertyModel> result = new List<ProjectPropertyModel>();
+            ArrayList result = new ArrayList();
+            string sql = "SELECT * FROM evaluation";
+
+            DataSet ds = DatabaseHelper.Query(sql);
+            if (ds.Tables.Count == 0 || ds.Tables[0].Rows.Count == 0)
+            {
+                return null;
+            }
+
+            foreach (DataRow row in ds.Tables[0].Rows)
+            {
+                result.Add(DataRowToModel(row));
+            }
+
+            return result;
+        }
         public int Insert(EvaluationModel model)
         {
             string sql =
@@ -53,6 +118,19 @@ namespace DAL
             return DatabaseHelper.ExecuteSql(sql, parameters);
         }
 
+        public int DeleteEvaluation(string numero)
+        {
+            string sql = "DELETE FROM evaluation WHERE project_number = @numero";
+
+            MySqlParameter[] parameters =
+            {
+                new MySqlParameter("@numero", MySqlDbType.VarChar)
+            };
+
+            parameters[0].Value = numero;
+
+            return DatabaseHelper.ExecuteSql(sql, parameters);
+        }
 
         private EvaluationModel DataRowToModel(DataRow row)
         {

@@ -56,9 +56,9 @@ namespace iPorfolio.Views.Home
                     cmbressource.Items.Add(model.DisponibilteDesRessources);
                     cmdRisk.Items.Add(model.DegreeDeRiskDuringSonExecution);
                 }
-                catch (Exception exception)
+                catch
                 {
-                    MessageBox.Show("Waiting for connection...");
+                    MessageBox.Show(@"Waiting for connection...");
                 }
             }
 

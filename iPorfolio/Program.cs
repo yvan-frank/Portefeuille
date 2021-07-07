@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using WindowsFormsControlLibrary1;
-using iPorfolio.Views.Home;
 using iPorfolio.Views;
+using iPorfolio.Views.Home;
 using iPorfolio.Views.Login;
 
 namespace iPorfolio
@@ -20,7 +16,7 @@ namespace iPorfolio
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new HomeForm());
+            Application.Run(new PortfolioForm());
         }
     }
 }

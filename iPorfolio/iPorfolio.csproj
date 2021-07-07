@@ -90,11 +90,23 @@
     <Compile Include="Views\Controls\Datacontrol.Designer.cs">
       <DependentUpon>Datacontrol.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Controls\DeleteControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Controls\DeleteControl.Designer.cs">
+      <DependentUpon>DeleteControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Controls\EvaluateControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\Controls\EvaluateControl.Designer.cs">
       <DependentUpon>EvaluateControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\ShowPortfolioListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Controls\ShowPortfolioListControl.Designer.cs">
+      <DependentUpon>ShowPortfolioListControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Controls\UserControl1.cs">
       <SubType>UserControl</SubType>
@@ -107,6 +119,12 @@
     </Compile>
     <Compile Include="Views\Evaluations\CriteriaForm.Designer.cs">
       <DependentUpon>CriteriaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Evaluations\EvaluationDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Evaluations\EvaluationDashboard.Designer.cs">
+      <DependentUpon>EvaluationDashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Evaluations\ScenarioForm.cs">
       <SubType>Form</SubType>
@@ -150,6 +168,12 @@
     <Compile Include="Views\Login\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\PortfolioForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PortfolioForm.Designer.cs">
+      <DependentUpon>PortfolioForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\SplashScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,14 +192,23 @@
     <EmbeddedResource Include="Views\Controls\Datacontrol.resx">
       <DependentUpon>Datacontrol.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Controls\DeleteControl.resx">
+      <DependentUpon>DeleteControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Controls\EvaluateControl.resx">
       <DependentUpon>EvaluateControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Controls\ShowPortfolioListControl.resx">
+      <DependentUpon>ShowPortfolioListControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Controls\UserControl1.resx">
       <DependentUpon>UserControl1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Evaluations\CriteriaForm.resx">
       <DependentUpon>CriteriaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Evaluations\EvaluationDashboard.resx">
+      <DependentUpon>EvaluationDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Home\ExecutiveDashboardForm.resx">
       <DependentUpon>ExecutiveDashboardForm.cs</DependentUpon>
@@ -194,6 +227,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Login\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PortfolioForm.resx">
+      <DependentUpon>PortfolioForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>

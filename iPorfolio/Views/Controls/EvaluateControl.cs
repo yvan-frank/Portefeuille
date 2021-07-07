@@ -17,9 +17,5 @@ namespace iPorfolio.Views.Controls
             InitializeComponent();
         }
 
-        private void LbChef_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -85,6 +85,7 @@
             this.cmbP = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+            this.label14 = new System.Windows.Forms.Label();
             this.panHeader.SuspendLayout();
             this.guna2ShadowPanel1.SuspendLayout();
             this.guna2ShadowPanel2.SuspendLayout();
@@ -95,6 +96,7 @@
             this.panHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panHeader.BackColor = System.Drawing.Color.White;
+            this.panHeader.Controls.Add(this.label14);
             this.panHeader.Controls.Add(this.guna2Button1);
             this.panHeader.Controls.Add(this.btnClose);
             this.panHeader.Location = new System.Drawing.Point(0, 3);
@@ -814,9 +816,9 @@
             this.lblPercent.ForeColor = System.Drawing.Color.White;
             this.lblPercent.Location = new System.Drawing.Point(229, 139);
             this.lblPercent.Name = "lblPercent";
-            this.lblPercent.Size = new System.Drawing.Size(30, 19);
+            this.lblPercent.Size = new System.Drawing.Size(63, 19);
             this.lblPercent.TabIndex = 8;
-            this.lblPercent.Text = "10 %";
+            this.lblPercent.Text = "Inexistant";
             // 
             // lblstrag
             // 
@@ -825,9 +827,9 @@
             this.lblstrag.ForeColor = System.Drawing.Color.White;
             this.lblstrag.Location = new System.Drawing.Point(393, 139);
             this.lblstrag.Name = "lblstrag";
-            this.lblstrag.Size = new System.Drawing.Size(73, 19);
+            this.lblstrag.Size = new System.Drawing.Size(63, 19);
             this.lblstrag.TabIndex = 7;
-            this.lblstrag.Text = "Strategique";
+            this.lblstrag.Text = "Inexistant";
             // 
             // lblStatus
             // 
@@ -836,9 +838,9 @@
             this.lblStatus.ForeColor = System.Drawing.Color.White;
             this.lblStatus.Location = new System.Drawing.Point(623, 139);
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(94, 19);
+            this.lblStatus.Size = new System.Drawing.Size(63, 19);
             this.lblStatus.TabIndex = 6;
-            this.lblStatus.Text = "En progression";
+            this.lblStatus.Text = "Inexistant";
             // 
             // lblNum
             // 
@@ -847,9 +849,9 @@
             this.lblNum.ForeColor = System.Drawing.Color.White;
             this.lblNum.Location = new System.Drawing.Point(140, 84);
             this.lblNum.Name = "lblNum";
-            this.lblNum.Size = new System.Drawing.Size(37, 19);
+            this.lblNum.Size = new System.Drawing.Size(63, 19);
             this.lblNum.TabIndex = 5;
-            this.lblNum.Text = "Proj-1";
+            this.lblNum.Text = "Inexistant";
             // 
             // guna2HtmlLabel4
             // 
@@ -920,6 +922,16 @@
             // 
             this.guna2DragControl1.TargetControl = this.panHeader;
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(212, 9);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(166, 17);
+            this.label14.TabIndex = 67;
+            this.label14.Text = "chaque critère (de -2 à 2),";
+            // 
             // CriteriaForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -935,6 +947,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.CriteriaForm_Load);
             this.panHeader.ResumeLayout(false);
+            this.panHeader.PerformLayout();
             this.guna2ShadowPanel1.ResumeLayout(false);
             this.guna2ShadowPanel1.PerformLayout();
             this.guna2ShadowPanel2.ResumeLayout(false);
@@ -1000,5 +1013,6 @@
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2ComboBox cmbCoMission;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
+        private System.Windows.Forms.Label label14;
     }
 }

@@ -11,10 +11,10 @@ namespace DAL
 {
     public class ProjectPropertyDal
     {
-        public List<ProjectPropertyModel> GetAll()
+        public List<ProjectPropertyModel> GetAll(int p)
         {
             List<ProjectPropertyModel> result = new List<ProjectPropertyModel>();
-            string sql = "CALL GetAllProjectByJointure()";
+            string sql = "CALL GetAllProjectByJointure('"+p+"')";
             DataSet ds = DatabaseHelper.Query(sql);
 
             if (ds.Tables.Count == 0)
@@ -29,10 +29,10 @@ namespace DAL
 
             return result;
         } 
-        public ProjectPropertyModel GetModel(string numero)
+        public ProjectPropertyModel GetModel(string numero, int p)
         {
             // sql jointure de 4 tables
-            string sql = "CALL GetJoinData('"+numero+"')";
+            string sql = "CALL GetJoinData('"+numero+ "', '" + p + "')";
             MySqlParameter[] parameters =
             {
                 new MySqlParameter("@numero", MySqlDbType.VarChar)
@@ -46,7 +46,7 @@ namespace DAL
 
             return DataRowJoin(ds.Tables[0].Rows[0]);
         }
-        public ProjectPropertyModel GetModelName(string nom)
+        public ProjectPropertyModel GetModelName(string nom, int p)
         {
             // sql jointure de 4 tables
             string sql = "CALL GetName('"+nom+"')";
@@ -145,6 +145,18 @@ namespace DAL
             if (row["estimateDate"] != null && row["estimateDate"].ToString() != String.Empty)
             {
                 model.Duration = int.Parse(row["estimateDate"].ToString());
+            }
+            if (row["decription"] != null && row["decription"].ToString() != String.Empty)
+            {
+                model.Description = row["decription"].ToString();
+            }
+            if (row["type"] != null && row["type"].ToString() != String.Empty)
+            {
+                model.Type = row["type"].ToString();
+            }
+            if (row["category"] != null && row["category"].ToString() != String.Empty)
+            {
+                model.Category = row["category"].ToString();
             }
 
             return model;

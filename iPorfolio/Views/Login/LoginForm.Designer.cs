@@ -41,6 +41,7 @@
             this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
             this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.gunaLabel5 = new Guna.UI.WinForms.GunaLabel();
+            this.lblError = new Guna.UI.WinForms.GunaLabel();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -110,7 +111,7 @@
             this.Btnconnect.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btnconnect.ForeColor = System.Drawing.Color.White;
             this.Btnconnect.HoverState.Parent = this.Btnconnect;
-            this.Btnconnect.Location = new System.Drawing.Point(313, 269);
+            this.Btnconnect.Location = new System.Drawing.Point(313, 272);
             this.Btnconnect.Name = "Btnconnect";
             this.Btnconnect.ShadowDecoration.Parent = this.Btnconnect;
             this.Btnconnect.Size = new System.Drawing.Size(126, 31);
@@ -141,7 +142,7 @@
             this.Btnannul.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btnannul.ForeColor = System.Drawing.Color.White;
             this.Btnannul.HoverState.Parent = this.Btnannul;
-            this.Btnannul.Location = new System.Drawing.Point(461, 269);
+            this.Btnannul.Location = new System.Drawing.Point(461, 272);
             this.Btnannul.Name = "Btnannul";
             this.Btnannul.ShadowDecoration.Parent = this.Btnannul;
             this.Btnannul.Size = new System.Drawing.Size(126, 31);
@@ -206,11 +207,24 @@
             this.gunaLabel5.TabIndex = 11;
             this.gunaLabel5.Text = "Bienvenue sur GPP Portefeuille de projet";
             // 
+            // lblError
+            // 
+            this.lblError.AutoSize = true;
+            this.lblError.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblError.ForeColor = System.Drawing.Color.Red;
+            this.lblError.Location = new System.Drawing.Point(391, 237);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(32, 13);
+            this.lblError.TabIndex = 12;
+            this.lblError.Text = "Error";
+            this.lblError.Visible = false;
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(678, 350);
+            this.Controls.Add(this.lblError);
             this.Controls.Add(this.gunaLabel5);
             this.Controls.Add(this.guna2CirclePictureBox2);
             this.Controls.Add(this.gunaLabel4);
@@ -224,7 +238,9 @@
             this.Controls.Add(this.TxtId);
             this.Controls.Add(this.gunaLabel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LoginForm";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginForm";
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
@@ -248,5 +264,6 @@
         private Guna.UI.WinForms.GunaLabel gunaLabel4;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox2;
         private Guna.UI.WinForms.GunaLabel gunaLabel5;
+        private Guna.UI.WinForms.GunaLabel lblError;
     }
 }
