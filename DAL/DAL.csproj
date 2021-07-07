@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="CritereDal.cs" />
     <Compile Include="EvaluationDal.cs" />
+    <Compile Include="PortfolioDal.cs" />
     <Compile Include="ProjectDal.cs" />
     <Compile Include="ProjectPropertyDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

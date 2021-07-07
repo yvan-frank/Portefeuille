@@ -1,6 +1,6 @@
 E:\PROJECT\Portfolio\Common\bin\Debug\Common.dll
 E:\PROJECT\Portfolio\Common\bin\Debug\Common.pdb
+E:\PROJECT\Portfolio\Common\obj\Debug\Common.csprojAssemblyReference.cache
 E:\PROJECT\Portfolio\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
 E:\PROJECT\Portfolio\Common\obj\Debug\Common.dll
 E:\PROJECT\Portfolio\Common\obj\Debug\Common.pdb
-E:\PROJECT\Portfolio\Common\obj\Debug\Common.csprojAssemblyReference.cache

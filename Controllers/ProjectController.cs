@@ -7,9 +7,9 @@ namespace Controllers
     {
         private readonly ProjectDal dal = new ProjectDal();
 
-        public List<ProjectModel> GetAll()
+        public List<ProjectModel> GetAll(int p)
         {
-            return dal.GetAll();
+            return dal.GetAll(p);
         }
 
         public List<StatusAndStateProjectModel> GetStatus()
@@ -22,19 +22,19 @@ namespace Controllers
             return dal.GetState();
         }
 
-        public List<ProjectModel> GetListByNumero(string numero)
+        public List<ProjectModel> GetListByNumero(string numero, string p)
         {
-            return dal.GetListByNumero(numero);
+            return dal.GetListByNumero(numero, int.Parse(p));
         }
 
-        public int CountProject()
+        public int CountProject(string p)
         {
-            return dal.CountProject();
+            return dal.CountProject(int.Parse(p));
         }
 
-        public int GetCostProject()
+        public int GetCostProject(string p)
         {
-            return dal.GetCountCost();
+            return dal.GetCountCost(int.Parse(p));
         }
 
         public int Insert(ProjectModel model)
@@ -57,9 +57,15 @@ namespace Controllers
             return dal.Update(model);
         }
 
-        public ProjectModel GetModel(string projectId)
+        public ProjectModel GetModel(string projectId, string p)
         {
-            return dal.GetModel(projectId);
+            return dal.GetModel(projectId, int.Parse(p));
         }
+
+        public int DeleteProject(string numero)
+        {
+            return dal.DeleteProject(numero);
+        }
+
     }
 }

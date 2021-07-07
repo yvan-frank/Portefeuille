@@ -9,7 +9,7 @@ namespace iPorfolio.Views.Evaluations
     public partial class CriteriaForm : Form
     {
         ProjectController cp = new ProjectController();
-
+        public string P { get; }
         #region Variables ponderations
 
         // les quotients de ponderation
@@ -39,12 +39,16 @@ namespace iPorfolio.Views.Evaluations
         {
             InitializeComponent();
         }
+        public CriteriaForm(string p)
+        {
+            InitializeComponent();
+            this.P = p;
+        }
 
         private void CriteriaForm_Load(object sender, EventArgs e)
         {
             guna2ShadowForm1.SetShadowForm(this);
             guna2ShadowForm1.ShadowColor = Color.Blue;
-            MessageBox.Show(@"Le critere de selection est une serie de questions auxquelles vous repondrez");
 
             CriteriaController criteria = new CriteriaController();
 
@@ -82,7 +86,7 @@ namespace iPorfolio.Views.Evaluations
 
         private void Loadproject()
         {
-            foreach (ProjectModel model in cp.GetAll())
+            foreach (ProjectModel model in cp.GetAll(int.Parse(P)))
             {
                 cmbP.Items.Add(model.NumberProject);
             }
@@ -116,26 +120,43 @@ namespace iPorfolio.Views.Evaluations
             EvaluationModel model = new EvaluationModel();
             EvaluationController controller = new EvaluationController();
             model.Score = result;
-            model.ProjectNumber = cmbP.SelectedItem.ToString();
-            model.CoherenceDegreeWithTheMission = _coefMission;
-            model.AlignmentWithTheEnterpriseStrategy = strategy;
-            model.UrgencyProjectDegree = urgency;
-            model.ObjectiveProjectStability = stable;
-            model.SoutienDesPartiesPrenantes = soutien;
-            model.DureeDuProjet = duree;
-            model.CoutduProjet = cout;
-            model.DisponibilteDesRessources = resource;
-            model.DegreeDeRiskDuringSonExecution = risk;
-            model.DegreeDeComplxiteDuProjet = complex;
-            model.CaractereInnovation = innovant;
-            model.SkillsDevelop = skills;
 
-            if (controller.Insert(model) > 0)
+            try
             {
-                MessageBox.Show(@"EVALUATION TERMINEE");
+                if (model.ProjectNumber == null)
+                {
+                    //
+                }
+
+                model.ProjectNumber = cmbP.SelectedItem.ToString();
+                model.CoherenceDegreeWithTheMission = _coefMission;
+                model.AlignmentWithTheEnterpriseStrategy = strategy;
+                model.UrgencyProjectDegree = urgency;
+                model.ObjectiveProjectStability = stable;
+                model.SoutienDesPartiesPrenantes = soutien;
+                model.DureeDuProjet = duree;
+                model.CoutduProjet = cout;
+                model.DisponibilteDesRessources = resource;
+                model.DegreeDeRiskDuringSonExecution = risk;
+                model.DegreeDeComplxiteDuProjet = complex;
+                model.CaractereInnovation = innovant;
+                model.SkillsDevelop = skills;
+
+                if (model.ProjectNumber != null)
+                {
+                    if (controller.Insert(model) > 0)
+                    {
+                        MessageBox.Show(@"EVALUATION TERMINEE", @"Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                        MessageBox.Show(@"Insertion error");
+                }
             }
-            else
-                MessageBox.Show(@"Insertion error");
+            catch
+            {
+                MessageBox.Show(@"Veuillez choisir un projet", @"Error", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+            }
+
         }
 
         private void CmbCoMission_SelectedIndexChanged(object sender, EventArgs e)
@@ -458,17 +479,13 @@ namespace iPorfolio.Views.Evaluations
 
         private void BtnEvaluer_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show(@"Aucun critère n'a été sélectionné, voulez-vous continuer?", @"Information!",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
-            {
-                Insert();
-            }
+            Insert();
         }
 
         private void CmbP_SelectedIndexChanged(object sender, EventArgs e)
         {
             ProjectPropertyController property = new ProjectPropertyController();
-            ProjectPropertyModel model = property.GetModel(cmbP.SelectedItem.ToString());
+            ProjectPropertyModel model = property.GetModel(cmbP.SelectedItem.ToString(), P);
 
             if (cmbP.SelectedItem.ToString() == model.NumberProject)
             {

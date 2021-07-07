@@ -12,17 +12,23 @@ namespace iPorfolio.Views.Home
         private ProjectController _project = new ProjectController();
         private TaskController _task = new TaskController();
       
+        public string P { get; }
         public DashboardForm()
         {
             InitializeComponent();
+        }
+        public DashboardForm(string p)
+        {
+            InitializeComponent();
+            this.P = p;
         }
 
         private void DashboardForm_Load(object sender, EventArgs e)
         {
            
-            lblCountProject.Text = _project.CountProject().ToString();
+            lblCountProject.Text = _project.CountProject(P).ToString();
 
-            lblTotal.Text = @"FCFA "+_project.GetCostProject();
+            lblTotal.Text = @"FCFA "+_project.GetCostProject(P);
             lblTasks.Text = _task.GetALLTasks().ToString();
 
             LoadChart();
@@ -37,13 +43,20 @@ namespace iPorfolio.Views.Home
             ArrayList status = new ArrayList();
             ArrayList nbr = new ArrayList();
 
-            foreach (ProjectPropertyModel model in controller.GetModelList())
+            try
             {
-                status.Add(model.Status);
-                nbr.Add(model.ProjectByStatus);
+                foreach (ProjectPropertyModel model in controller.GetModelList())
+                {
+                    status.Add(model.Status);
+                    nbr.Add(model.ProjectByStatus);
+                }
+                chart2.Series[0].Points.DataBindXY(status, nbr);
+                chart1.Series[0].Points.DataBindXY(status, nbr);
             }
-            chart2.Series[0].Points.DataBindXY(status, nbr);
-            chart1.Series[0].Points.DataBindXY(status, nbr);
+            catch
+            {
+               //
+            }
         }
 
         private void LoadDataTable()
@@ -53,7 +66,7 @@ namespace iPorfolio.Views.Home
             gunaLinePanel1.Controls.Add(dataC);
             ProjectPropertyController pcController = new ProjectPropertyController();
 
-            foreach (ProjectPropertyModel mod in pcController.GetAll())
+            foreach (ProjectPropertyModel mod in pcController.GetAll(P))
             {
                 string[] chef1 = { mod.FunctionName };
                 string[] numbe = { mod.NumberProject };

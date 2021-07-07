@@ -10,19 +10,19 @@ namespace Controllers
     {
         private ProjectPropertyDal dal = new ProjectPropertyDal();
 
-        public List<ProjectPropertyModel> GetAll()
+        public List<ProjectPropertyModel> GetAll(string p)
         {
-            return dal.GetAll();
+            return dal.GetAll(int.Parse(p));
         }
 
-        public ProjectPropertyModel GetModel(string numero)
+        public ProjectPropertyModel GetModel(string numero, string p)
         {
-            return dal.GetModel(numero);
+            return dal.GetModel(numero, int.Parse(p));
         }
 
-        public ProjectPropertyModel GetName(string name)
+        public ProjectPropertyModel GetName(string name, string p)
         {
-            return dal.GetModelName(name);
+            return dal.GetModelName(name, int.Parse(p));
         }
         public ArrayList GetModelList()
         {

@@ -1,7 +1,4 @@
-﻿
-
-using System.Windows.Forms;
-using Guna.UI.Lib.ScrollBar;
+﻿using System.Windows.Forms;
 using iPorfolio.Views.Evaluations;
 
 namespace iPorfolio.Views.Home
@@ -11,6 +8,13 @@ namespace iPorfolio.Views.Home
         public HomeForm()
         {
             InitializeComponent();
+        }
+
+        public string Id { get; set; }
+        public HomeForm(string id)
+        {
+            InitializeComponent();
+            this.Id = id;
         }
 
         private Form _activForm;
@@ -33,44 +37,23 @@ namespace iPorfolio.Views.Home
 
         private void HomeForm_Load(object sender, System.EventArgs e)
         {
+            OnChildForm(new DashboardForm(Id));
+            lblPortefeuille.Text = @"Portefeuille N° "+ Id;
         }
 
-        private PanelScrollHelper panelScroll;
-       
         private void BtnProjet_Click(object sender, System.EventArgs e)
         {
-            btnScenario.Visible = false;
-            btnCriteria.Visible = false;
-            OnChildForm(new ProjectManagement());
+            OnChildForm(new ProjectManagement(Id));
         }
 
         private void BtnDashboard_Click(object sender, System.EventArgs e)
         {
-            btnScenario.Visible = false;
-            btnCriteria.Visible = false;
-            OnChildForm(new DashboardForm());
+            OnChildForm(new DashboardForm(Id));
         }
 
         private void BtnEvaluation_Click(object sender, System.EventArgs e)
         {
-            panContainer.Controls.Clear();
-            btnScenario.Visible = true;
-            btnCriteria.Visible = true;
-            panContainer.Controls.Add(btnScenario);
-            panContainer.Controls.Add(btnCriteria);
-        }
-
-        private void BtnScenario_Click(object sender, System.EventArgs e)
-        {
-            ScenarioForm scenario = new ScenarioForm();
-            scenario.ShowDialog();
-            scenario.ShowInTaskbar = false;
-        }
-
-        private void BtnCriteria_Click(object sender, System.EventArgs e)
-        {
-            CriteriaForm criteria = new CriteriaForm {ShowInTaskbar = false};
-            criteria.ShowDialog();
+            OnChildForm(new EvaluationDashboard(Id));
         }
 
         private void PanContainer_Resize(object sender, System.EventArgs e)
@@ -80,6 +63,23 @@ namespace iPorfolio.Views.Home
         private void BtnExecutive_Click(object sender, System.EventArgs e)
         {
             OnChildForm(new ExecutiveDashboardForm());
+        }
+
+        private void BtnClose_Click(object sender, System.EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void Btndeconnexion_Click(object sender, System.EventArgs e)
+        {
+            if (MessageBox.Show(@"Vous êtes sur le point de vous déconnecter, êtes-vous sûr?", @"Warning", 
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                Close();
+        }
+
+        private void BtnRetour_Click(object sender, System.EventArgs e)
+        {
+            this.Close();
         }
     }
 }

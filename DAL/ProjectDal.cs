@@ -9,11 +9,17 @@ namespace DAL
 {
     public class ProjectDal
     {
-        public List<ProjectModel> GetAll()
+        public List<ProjectModel> GetAll(int p)
         {
             List<ProjectModel> result = new List<ProjectModel>();
-            string sql = "select * from projet";
-            DataSet ds = DatabaseHelper.Query(sql);
+            string sql = "select * from projet where portefeuille_id = @p";
+
+            MySqlParameter[] parameters =
+            {
+                new MySqlParameter("@p", MySqlDbType.Int32)
+            };
+            parameters[0].Value = p;
+            DataSet ds = DatabaseHelper.Query(sql, parameters);
 
             if (ds.Tables.Count == 0)
             {
@@ -28,15 +34,17 @@ namespace DAL
             return result;
         }
 
-        public List<ProjectModel> GetListByNumero(string numeroProject)
+        public List<ProjectModel> GetListByNumero(string numeroProject, int p)
         {
             List<ProjectModel> result = new List<ProjectModel>();
-            string sql = "select * from projet where numero = @Numero";
+            string sql = "select * from projet where numero = @Numero and portefeuille_d = @p";
             MySqlParameter[] parameters =
             {
-                new MySqlParameter("@Numero", MySqlDbType.VarChar)
+                new MySqlParameter("@Numero", MySqlDbType.VarChar),
+                new MySqlParameter("@p", MySqlDbType.Int32)
             };
             parameters[0].Value = numeroProject;
+            parameters[1].Value = p;
             DataSet ds = DatabaseHelper.Query(sql, parameters);
             if (ds.Tables.Count == 0 || ds.Tables[0].Rows.Count == 0) return result;
             foreach (DataRow row in ds.Tables[0].Rows)
@@ -50,7 +58,7 @@ namespace DAL
         public List<StatusAndStateProjectModel> GetStatus()
         {
             List<StatusAndStateProjectModel> result = new List<StatusAndStateProjectModel>();
-            string sql = "select * from status";
+            string sql = "select * from status order by id";
             DataSet ds = DatabaseHelper.Query(sql);
             if (ds.Tables.Count == 0)
             {
@@ -68,7 +76,7 @@ namespace DAL
         public List<StatusAndStateProjectModel> GetState()
         {
             List<StatusAndStateProjectModel> result = new List<StatusAndStateProjectModel>();
-            string sql = "select * from etat";
+            string sql = "select * from etat order by id";
             DataSet ds = DatabaseHelper.Query(sql);
             if (ds.Tables.Count == 0)
             {
@@ -146,7 +154,7 @@ namespace DAL
         public int Update(ProjectModel model)
         {
             string sql =
-                "UPDATE projet SET nom=@nom,decription=@decription,type=@type,category=@category,dateDebut=@dateDebut,dateFin=@dateFin,cout=@cout,etat=@etat,status=@status,internaBudget=@internaBudget,externaBudget=@externaBudget,returnOfInvest=@returnOfInvest,closeDate=@closeDate,estimateDate=@estimateDate,donePercent=@donePercent,pm=@pm, planGoToLive=@planGoToLive,dueDate=@dueDate WHERE id=@ProjectId";
+                "UPDATE projet SET nom=@nom,decription=@decription,type=@type,category=@category,dateDebut=@dateDebut,dateFin=@dateFin,cout=@cout,etat=@etat,status=@status,internaBudget=@internaBudget,externaBudget=@externaBudget,returnOfInvest=@returnOfInvest,closeDate=@closeDate,estimateDate=@estimateDate,donePercent=@donePercent,pm=@pm, planGoToLive=@planGoToLive,dueDate=@dueDate WHERE numero=@numero";
 
             MySqlParameter[] parameters =
            {
@@ -216,6 +224,20 @@ namespace DAL
             return numberProject == model.NumberProject || name == model.ProjectName;
         }
 
+        public int DeleteProject(string numero)
+        {
+            string sql = "DELETE FROM projet WHERE numero = @numero";
+
+            MySqlParameter[] parameters =
+            {
+                new MySqlParameter("@numero", MySqlDbType.VarChar)
+            };
+
+            parameters[0].Value = numero;
+
+            return DatabaseHelper.ExecuteSql(sql, parameters);
+        }
+
 
         //number project management
         public string GenerateProjectNumber()
@@ -244,14 +266,34 @@ namespace DAL
         }
 
 
-        public ProjectModel GetModel(string projectId)
+        public ProjectModel GetModel(string projectId, int p)
         {
-            string sql = "select * from projet where numero = @numero";
+            string sql = "select * from projet where numero = @numero and portefeuille_id = @p";
+            MySqlParameter[] parameters =
+            {
+                new MySqlParameter("@numero", MySqlDbType.VarChar),
+                new MySqlParameter("@p", MySqlDbType.Int32)
+            };
+            parameters[0].Value = projectId;
+            parameters[1].Value = p;
+
+            DataSet ds = DatabaseHelper.Query(sql, parameters);
+            if (ds.Tables.Count == 0 || ds.Tables[0].Rows.Count == 0)
+            {
+                return null;
+            }
+
+            return DataRowToModel(ds.Tables[0].Rows[0]);
+        }
+
+        public ProjectModel GetModelPortfolio(string portfolioId)
+        {
+            string sql = "select * from projet where portefeuille_id = @numero";
             MySqlParameter[] parameters =
             {
                 new MySqlParameter("@numero", MySqlDbType.VarChar)
             };
-            parameters[0].Value = projectId;
+            parameters[0].Value = portfolioId;
 
             DataSet ds = DatabaseHelper.Query(sql, parameters);
             if (ds.Tables.Count == 0 || ds.Tables[0].Rows.Count == 0)
@@ -265,19 +307,31 @@ namespace DAL
 
 
         //get count project
-        public int CountProject()
+        public int CountProject(int p)
         {
-            string sql = "select count(*) from projet";
+            string sql = "select count(*) from projet where portefeuille_id =@p";
 
-            int val = DatabaseHelper.ExecuteSqlCount(sql);
+            MySqlParameter[] parameters =
+            {
+                new MySqlParameter("@p", MySqlDbType.Int32)
+            };
+            parameters[0].Value = p;
+
+            int val = DatabaseHelper.ExecuteSqlCount(sql, parameters);
 
             return val;
         }
 
-        public int GetCountCost()
+        public int GetCountCost(int p)
         {
-            string sql = "select sum(cout) from projet";
-            int cout = DatabaseHelper.ExecuteSqlCount(sql);
+            string sql = "select sum(cout) from projet where portefeuille_id =@p";
+
+            MySqlParameter[] parameters =
+            {
+                new MySqlParameter("@p", MySqlDbType.Int32)
+            };
+            parameters[0].Value = p;
+            int cout = DatabaseHelper.ExecuteSqlCount(sql, parameters);
 
             if (cout != 0)
             {
@@ -298,6 +352,10 @@ namespace DAL
             if (row["numero"] != null && row["numero"].ToString() != String.Empty)
             {
                 project.NumberProject = row["numero"].ToString();
+            }
+            if (row["portefeuille_id"] != null && row["portefeuille_id"].ToString() != String.Empty)
+            {
+                project.PortfolioId = int.Parse(row["portefeuille_id"].ToString());
             }
             if (row["nom"] != null && row["nom"].ToString() != String.Empty)
             {

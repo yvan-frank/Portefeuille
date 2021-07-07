@@ -28,6 +28,29 @@ namespace DAL.SqlUtility
             }
         }
 
+        public static int ExecuteSqlCount(string sql, params MySqlParameter[] cmSqlParameters)
+        {
+            using (var con = GetConnection())
+            {
+                int val;
+                try
+                {
+                    using (MySqlCommand command = new MySqlCommand())
+                    {
+                        PreparedCommand(command, GetConnection(), null, sql, cmSqlParameters);
+                        val = Convert.ToInt32(command.ExecuteScalar());
+                        command.Parameters.Clear();
+                    }
+
+                    return val;
+                }
+                catch
+                {
+                    return 0;
+                }
+
+            }
+        }
 
         public static int ExecuteSqlCount(string sql)
         {
@@ -56,6 +79,7 @@ namespace DAL.SqlUtility
 
             }
         }
+
         private static void PreparedCommand(MySqlCommand cmd, MySqlConnection con, MySqlTransaction trans,
             string cmText, MySqlParameter[] cmdParameters)
         {
